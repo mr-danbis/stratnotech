@@ -1,0 +1,18 @@
+//settings
+@import 'settings/vars';
+@import 'settings/fonts';
+@import 'settings/reset';
+@import 'settings/libs';
+@import 'settings/global';
+
+//common blocks
+@import '../blocks/header/header';
+@import '../blocks/footer/footer';
+
+//main page blocks
+@import '../blocks/start/start';
+@import '../blocks/advantages/advantages';
+@import '../blocks/about/about';
+@import '../blocks/technologies/technologies';
+@import '../blocks/industries/industries';
+@import '../blocks/reviews/reviews';

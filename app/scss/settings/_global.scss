@@ -1,0 +1,99 @@
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  color: #292929;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.box {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/images/start-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  width: 71%;
+  margin: 0 auto;
+}
+
+.link-line{
+  line-height: 1;
+  display: inline-block;
+  text-decoration:none;
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 27px;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: #FF4500;
+    transition: width .3s ease-in-out;
+  }
+  &:hover:after,
+  &:focus:after {
+    width: 100%;
+  }
+}
+
+.link-all{
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.015em;
+  color: #FF4500;
+  &:hover{
+    color: #FF5F23;
+  }
+}
+
+.btn{
+  display: inline-block;
+  background-color: #FF4500;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 18px 30px;
+  &:hover{
+    background-color: #FF5F23;
+    color: #DADADA;
+    transition: all 0.3s;
+  }
+}
+
+.title{
+  @include adaptiv-font(40,25);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: #292929;
+}
+
+.text{
+  font-weight: 400;
+  @include adaptiv-font(16, 13);
+  color: #292929;
+}
+
+@media (max-width: 1600px) {
+  .container {
+    width: 90%;
+  }
+}

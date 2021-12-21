@@ -1,0 +1,56 @@
+$maxWidth: 1920;
+$minWidth: 270;
+
+@mixin adaptiv-font($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  font-size: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-paddingRight($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  padding-right: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-paddingLeft($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  padding-left: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-paddingTop($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  padding-top: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-paddingBottom($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  padding-bottom: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-gridGap($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  grid-gap: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-gridColGap($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  grid-column-gap: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-gridRowGap($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  grid-row-gap: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
+@mixin adaptiv-height($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  height: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}

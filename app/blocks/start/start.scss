@@ -1,0 +1,33 @@
+.start{
+  margin-top: 192px;
+  color: #fff;
+  &__title{
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(40,25);
+    line-height: 54px;
+    letter-spacing: 0.09em;
+    margin-bottom: 16px;
+  }
+  &__description{
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(20, 15);
+    line-height: 168.18%;
+    margin-bottom: 20px;
+    &-years{
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(40, 25);
+      line-height: 168.18%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .start{
+    &__title{
+      line-height: 40px;
+    }
+  }
+}
