@@ -9,7 +9,7 @@
   &__grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 25vh);
+    grid-template-rows: repeat(2, 30vh);
     grid-column-gap: 12px;
     grid-row-gap: 12px;
     &-item{
@@ -68,8 +68,7 @@
     }
     &-title{
       font-weight: normal;
-      @include adaptiv-font(19,12);
-      letter-spacing: 0.045em;
+      @include adaptiv-font(18,12);
       margin-bottom: 12px;
     }
     &-text{
