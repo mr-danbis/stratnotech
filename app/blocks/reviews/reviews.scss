@@ -24,7 +24,6 @@
       font-weight: normal;
       @include adaptiv-font(16,12);
       line-height: 182.18%;
-      color: #292929;
     }
     &-bottom{
       width: 100%;
@@ -35,12 +34,10 @@
     &-name{
       font-weight: 600;
       @include adaptiv-font(16,12);
-      color: #292929;
     }
     &-position{
       font-weight: 300;
       @include adaptiv-font(16, 12);
-      color: #292929;
       margin-bottom: 8px;
     }
     &-stars{
@@ -78,7 +75,7 @@
     }
   }
   &-dot.active{
-    background: #FF4500;
+    background: $orange;
   }
 }
 

@@ -2,7 +2,7 @@ html,
 body {
   overflow-x: hidden;
   height: 100%;
-  color: #292929;
+  color: $textColor;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -50,7 +50,7 @@ body {
     content: "";
     height: 2px;
     width: 0%;
-    background-color: #FF4500;
+    background-color: $orange;
     transition: width .3s ease-in-out;
   }
   &:hover:after,
@@ -63,7 +63,7 @@ body {
   font-weight: normal;
   font-size: 18px;
   letter-spacing: 0.015em;
-  color: #FF4500;
+  color: $orange;
   border-bottom: 1px solid transparent;
   &:hover{
     color: #FF5F23;
@@ -75,12 +75,12 @@ body {
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0.015em;
-  color: #FF4500;
+  color: $orange;
   padding: 12px 14px;
-  border: 1px solid #FF4500;
+  border: 1px solid $orange;
   border-radius: 5px;
   &:hover{
-    background-color: #FF4500;
+    background-color: $orange;
     color: #fff;
     transition: all .3s;
   }
@@ -88,7 +88,7 @@ body {
 
 .btn{
   display: inline-block;
-  background-color: #FF4500;
+  background-color: $orange;
   border-radius: 5px;
   font-size: 18px;
   color: #FFFFFF;
@@ -104,13 +104,11 @@ body {
   @include adaptiv-font(40,25);
   font-weight: 300;
   letter-spacing: 0.03em;
-  color: #292929;
 }
 
 .text{
   font-weight: 400;
   @include adaptiv-font(16, 13);
-  color: #292929;
 }
 
 @media (max-width: 1600px) {

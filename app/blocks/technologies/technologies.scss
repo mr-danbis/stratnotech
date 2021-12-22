@@ -26,6 +26,7 @@
   &__item{
     @include adaptiv-height(310,100);
     position: relative;
+    color: $textColor;
   }
   &__item-title{
     position: absolute;
@@ -33,7 +34,6 @@
     left: 19px;
     font-weight: normal;
     @include adaptiv-font(20,11);
-    color: #292929;
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
