@@ -7,6 +7,12 @@ $minWidth: 270;
   font-size: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
 }
 
+@mixin adaptiv-padding($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  padding: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
 @mixin adaptiv-paddingRight($pcValue, $mobValue) {
   $addSize: $pcValue - $mobValue;
   $differenceWidth: $maxWidth - $minWidth;

@@ -34,6 +34,10 @@ body {
   margin: 0 auto;
 }
 
+#more {
+  display: none;
+}
+
 .link-line{
   line-height: 1;
   display: inline-block;
@@ -60,8 +64,25 @@ body {
   font-size: 18px;
   letter-spacing: 0.015em;
   color: #FF4500;
+  border-bottom: 1px solid transparent;
   &:hover{
     color: #FF5F23;
+    border-bottom: 1px solid #FF5F23;
+  }
+}
+
+.read-all{
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.015em;
+  color: #FF4500;
+  padding: 12px 14px;
+  border: 1px solid #FF4500;
+  border-radius: 5px;
+  &:hover{
+    background-color: #FF4500;
+    color: #fff;
+    transition: all .3s;
   }
 }
 
@@ -95,5 +116,11 @@ body {
 @media (max-width: 1600px) {
   .container {
     width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    text-align: center;
   }
 }

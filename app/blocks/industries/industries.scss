@@ -59,6 +59,9 @@
       display: flex;
       align-items: center;
       flex-direction: column;
+      &-title {
+        text-align: center;
+      }
       &-text{
         text-align: center;
       }
