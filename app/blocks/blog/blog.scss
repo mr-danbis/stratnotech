@@ -1,0 +1,9 @@
+.blog {
+  @include adaptiv-paddingBottom(180, 60);
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+}

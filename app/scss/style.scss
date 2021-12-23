@@ -4,6 +4,7 @@
 @import 'settings/reset';
 @import 'settings/libs';
 @import 'settings/global';
+@import 'settings/slider';
 
 //common blocks
 @import '../blocks/header/header';
@@ -17,3 +18,4 @@
 @import '../blocks/industries/industries';
 @import '../blocks/reviews/reviews';
 @import '../blocks/news/news';
+@import '../blocks/blog/blog';

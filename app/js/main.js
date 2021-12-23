@@ -1,6 +1,6 @@
 $.noConflict();
 $(document).ready(function(){
-  $(".reviews__slider").owlCarousel({
+  $(".slider").owlCarousel({
     items:1,
     margin: 50,
   });
