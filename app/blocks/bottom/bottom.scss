@@ -1,0 +1,42 @@
+.bottom {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background-color: #0B1012;
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  @include adaptiv-font(14, 10);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__developer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    margin-right: 10px;
+
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .bottom {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__copyright {
+      margin-bottom: 10px;
+    }
+  }
+}
