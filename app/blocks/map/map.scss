@@ -1,0 +1,125 @@
+.map{
+  &__wrapper{
+    position: relative;
+  }
+  &__info{
+    display: flex;
+    position: absolute;
+    left: 227px;
+    top: 94px;
+    z-index: 1;
+  }
+  &__link{
+    color: #fff;
+    @include adaptiv-font(16, 12);
+    font-weight: normal;
+    border-bottom: 1px solid transparent;
+    &:hover{
+      border-bottom: 1px solid #fff;
+    }
+  }
+  &__address{
+    background-color: #FF4500;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-style: normal;
+    &-title{
+      margin-bottom: 6px;
+      font-weight: 600;
+      @include adaptiv-font(16,13);
+    }
+    &-text{
+      margin-bottom: 10px;
+      @include adaptiv-font(16, 12);
+    }
+  }
+  &__russia{
+    background-color: #739DB2;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    &-title{
+      margin-bottom: 5px;
+      font-weight: 600;
+      @include adaptiv-font(16,13);
+    }
+  }
+  &__write{
+    display: flex;
+    align-items: center;
+    background-color: #EFF6F9;
+    &-title{
+      @include adaptiv-font(16,13);
+      font-weight: normal;
+      margin-bottom: 22px;
+    }
+    &-img{
+      margin-right: 7px;
+      object-fit: contain;
+    }
+    &-btn{
+      padding: 6px 10px;
+      @include adaptiv-font(18,13);
+    }
+  }
+  &__address,
+  &__write,
+  &__russia{
+    @include adaptiv-padding(25,10);
+  }
+  &__yandex{
+    width: 100%;
+    @include adaptiv-height(500,160);
+  }
+}
+
+@media (max-width: 1200px) {
+  .map{
+    &__info{
+      position: static;
+    }
+    &__write{
+      width: 50%;
+    }
+    &__russia,
+    &__address{
+      width: 25%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .map{
+    &__info{
+      flex-wrap: wrap;
+    }
+    &__address,
+    &__russia{
+      width: 50%;
+      &-title,
+      &-text,
+      &-number{
+        text-align: center;
+      }
+      &-text{
+        text-align: center;
+      }
+    }
+    &__address,
+    &__russia{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__write{
+      width: 100%;
+      justify-content: center;
+      &-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
