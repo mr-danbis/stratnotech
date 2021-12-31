@@ -28,8 +28,57 @@
       color: inherit;
       @include adaptiv-font(16, 10);
     }
+    &-item{
+      &--submenu{
+        position: relative;
+        &:after{
+          position: absolute;
+          top: 8px;
+          right: -20px;
+          content: "";
+          width: 11px;
+          height: 7px;
+          background-image: url(/images/icons/arrow.svg);
+        }
+        &:hover{
+          .header__submenu{
+            display: block;
+          }
+        }
+      }
+    }
   }
 
+  &__submenu{
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: -80%;
+    width: max-content;
+    padding-top: 15px !important;
+  }
+  &__submenu li{
+    border-bottom: 1px solid #A09F9F;
+    background-color: #fff;
+    &:hover{
+      background-color: #6A6868;
+      transition: all .3s;
+    }
+  }
+  
+  &__submenu li a{
+    display: block;
+    padding: 7px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    color: #6A6868;
+    &:hover {
+      color: #fff;
+      transition: all .3s;
+    }
+  }
+  
   &__languages {
     line-height: 1;
     display: inline-block;

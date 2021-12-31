@@ -2,7 +2,8 @@
   padding-top: 30px;
   padding-bottom: 50px;
   width: 250px;
-  background-color: #fff;
+  background-color: $orange;
+  color: #fff;
   position: fixed;
   top: 0;
   right: 0;
@@ -56,7 +57,7 @@
     width: 50px;
     position: absolute;
     margin-top: 24px;
-    background-color: #337AB7;
+    background-color: #fff;
     border-radius: 2px;
     transform: rotate(45deg);
     transition: all .3s ease-in;
@@ -67,7 +68,7 @@
     width: 50px;
     position: absolute;
     margin-top: 24px;
-    background-color: #337AB7;
+    background-color: #fff;
     border-radius: 2px;
     transform: rotate(-45deg);
     transition: all .3s ease-in;
@@ -76,7 +77,7 @@
   &__close-btn .close-btn {
     margin: 54px 0 0 -5px;
     position: absolute;
-    color: $orange;
+    color: #fff;
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     font-weight: bold;
@@ -87,18 +88,34 @@
 
   &__close-btn div:hover .leftright {
     transform: rotate(-45deg);
-    background-color: $orange;
+    background-color: #fff;
   }
 
   &__close-btn div:hover .rightleft {
     transform: rotate(45deg);
-    background-color: $orange;
+    background-color: #fff;
   }
 
   &__close-btn div:hover .close-btn {
     opacity: 1;
   }
 }
+
+
+@media (max-width: 700px) {
+  .sidebar {
+    &__wrapper{
+     justify-content: space-around; 
+    }
+    &__settings{
+      display: flex;
+    }
+    &__languages-btn{
+      font-size: 18px;
+    }
+  }
+}
+
 
 @media (max-width: 300px) {
   .sidebar{
