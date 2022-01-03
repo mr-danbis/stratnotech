@@ -1,8 +1,8 @@
 .sidebar {
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 250px;
-  background-color: $orange;
+  background-color: #ad9992;
   color: #fff;
   position: fixed;
   top: 0;
@@ -12,6 +12,7 @@
   box-shadow: -15px 0 10px 0 rgba(0, 0, 0, 0.2);
   transition: all 1000ms;
   transition-delay: .3s;
+  overflow-y: scroll;
   &.sidebar--hidden {
     transform: translateX(100%);
   }
@@ -19,19 +20,30 @@
     height: 100%;
   }
   &__wrapper{
-    height: 100%;
-    justify-content: center;
+    height: 80%;
     flex-direction: column;
+    justify-content: space-between;
   }
   &__menu{
+    width: 100%;
     display: block;
+    margin-bottom: 30px;
+    padding-left: 20px !important;
     &-item{
+      width: 100%;
       &:not(:last-child){
         margin-bottom: 30px;
       }
+      &--submenu{
+        &::after{
+          right: 20px !important;
+        }
+      }
     }
     &-link{
-      font-size: 18px;
+      display: inline-block;
+      width: 100%;
+      font-size: 16px;
     }
   }
 
@@ -39,10 +51,15 @@
     display: none;
   }
 
+  &__submenu>li>a{
+    color: #fff;
+    font-size: 13px;
+  }
+
   &__close-btn {
-    margin: 20px;
     display: flex;
     justify-content: center;
+    height: 20%;
   }
 
   &__close-btn div {
@@ -104,9 +121,6 @@
 
 @media (max-width: 700px) {
   .sidebar {
-    &__wrapper{
-     justify-content: space-around; 
-    }
     &__settings{
       display: flex;
     }
