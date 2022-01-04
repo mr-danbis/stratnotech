@@ -110,7 +110,7 @@
   .news {
     &__grid {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 20vh);
+      grid-template-rows: repeat(4, 25vh);
       &-item {
         &_1 {
           grid-area: 1 / 1 / 2 / 2;

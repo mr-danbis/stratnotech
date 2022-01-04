@@ -32,21 +32,51 @@
     position: absolute;
     bottom: 19px;
     left: 19px;
+    height: 88px;
     font-weight: normal;
-    @include adaptiv-font(20,11);
+    @include adaptiv-font(18,11);
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 21px;
+    padding-right: 54px;
+    @include adaptiv-paddingRight(54,21);
+    &_line{
+      width: 36px;
+      height: 2px;
+      background-color: $orange;
+      margin-left: 14px;
+    }
   }
 }
+
+@media (max-width: 1220px) {
+  .technologies {
+    &__item{
+      &-title{
+        right: 19px;
+      }
+    }
+  }
+}
+
 
 @media (max-width: 800px) {
   .technologies {
     &__list {
       grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      &-title {
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
     }
   }
 }
