@@ -27,7 +27,7 @@
   &__menu{
     width: 100%;
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 110px;
     padding-left: 20px !important;
     &-item{
       width: 100%;
@@ -44,6 +44,7 @@
       display: inline-block;
       width: 100%;
       font-size: 16px;
+      margin-bottom: 10px;
     }
   }
 
@@ -54,6 +55,10 @@
   &__submenu>li>a{
     color: #fff;
     font-size: 13px;
+  }
+
+  &__submenu li {
+   margin-bottom: 10px;
   }
 
   &__close-btn {
@@ -123,6 +128,7 @@
   .sidebar {
     &__settings{
       display: flex;
+      padding-bottom: 30px;
     }
     &__languages-btn{
       font-size: 18px;
