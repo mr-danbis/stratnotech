@@ -30,10 +30,12 @@
     }
     &-item{
       &--submenu{
+        display: flex;
+        justify-content: center;
         position: relative;
         &:after{
           position: absolute;
-          top: 8px;
+          top: 5px;
           right: -20px;
           content: "";
           width: 11px;
@@ -53,7 +55,6 @@
     display: none;
     position: absolute;
     top: 15px;
-    left: -40%;
     width: max-content;
     padding-top: 15px !important;
   }
