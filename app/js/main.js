@@ -60,6 +60,6 @@ jQuery(function($){
 });
 
 
-if (window.location.href == "http://localhost:3000/") {
+if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/") {
   $('.header__menu-item--home').addClass('active-link');
 }
