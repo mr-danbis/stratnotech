@@ -1,0 +1,22 @@
+<div class="modal modal__hidden">
+  <div class="modal__container">
+    <h1 class="modal__title">
+      Заполните форму обратной связи и наш
+      специалист свяжется с Вами
+    </h1>
+    <form class="modal__form" modal="post" action="send.php">
+      <input class="modal__input" type="text" placeholder="*Имя" required>
+      <input class="modal__input" type="mail" placeholder="*E-mail" required>
+      <input class="modal__input" type="text" placeholder="Телефон">
+      <textarea class="modal__textarea" placeholder="Сообщение"></textarea>
+      <div class="modal__agreement">
+        <input class="modal__agreement-checkbox" type="checkbox" id="agreement">
+        <label class="modal__agreement-label" for="agreement">
+          Нажимая на кнопку вы соглашаетесь на обработку
+          персональных данных
+        </label>
+      </div>
+      <button class="modal__button btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>

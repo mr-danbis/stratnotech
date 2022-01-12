@@ -43,3 +43,23 @@ jQuery(function($){
 		}
 	});
 });
+
+
+//Opening and closing modal window
+$('.map__write-btn').on('click', function () {
+  $('.modal').removeClass('modal__hidden').addClass('modal__visible');
+});
+jQuery(function($){
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+		var div = $(".modal"); // тут указываем ID элемента
+		if (!div.is(e.target) // если клик был не по нашему блоку
+		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+          $(".modal").addClass("modal__hidden");
+		}
+	});
+});
+
+
+if (window.location.href == "http://localhost:3000/") {
+  $('.header__menu-item--home').addClass('active-link');
+}

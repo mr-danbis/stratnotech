@@ -1,0 +1,192 @@
+.modal{
+  padding-top: 35px;
+  padding-bottom: 35px;
+  width: 35%;
+  top: 100px;
+  background-color: #739DB2;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  &__container{
+    width: 75%;
+    margin: auto; 
+  }
+  &__visible{
+    display: block;
+  }
+  &__hidden{
+    display: none;
+  }
+  &__title{
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(20,12);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    margin-bottom: 34px;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__input{
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border:none;
+    @include adaptiv-font(16, 10);
+    @include adaptiv-paddingTop(15,7);
+    @include adaptiv-paddingBottom(15, 7);
+    @include adaptiv-paddingLeft(31, 15);
+    @include adaptiv-paddingRight(31, 15);
+    outline: none;
+    &::placeholder{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      @include adaptiv-font(16, 10);
+      position: relative;
+      &::after{
+        position: absolute;
+        content: "*";
+
+      }
+    }
+  }
+  &__textarea{
+    width: 100%;
+    @include adaptiv-paddingTop(15, 7);
+    @include adaptiv-paddingBottom(15, 7);
+    @include adaptiv-paddingLeft(31, 15);
+    @include adaptiv-paddingRight(31, 15);
+    border:none;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    height: 18vh;
+    resize: none;
+    outline: none;
+    @include adaptiv-font(16, 10);
+    &::placeholder {
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(16, 10);
+    }
+  }
+  &__agreement{
+    margin-bottom: 34px;
+    display: flex;
+    &-checkbox{
+      margin-right: 17px !important;
+      margin: 0;
+      width: 23px;
+      height: 23px;
+      border-radius: 3px;
+    }
+    &-label{
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(14, 10);
+      color: #FFFFFF;
+    }
+
+
+    &-checkbox[type="checkbox"]:checked,
+    &-checkbox[type="checkbox"]:not(:checked){
+      position: absolute;
+      left: -9999px;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label,
+    &-checkbox[type="checkbox"]:not(:checked)+label{
+      display: inline-block;
+      position: relative;
+      padding-left: 45px;
+      cursor: pointer;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:before,
+    &-checkbox[type="checkbox"]:not(:checked)+label:before{
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 23px;
+      height: 23px;
+      border: 1px solid #dddddd;
+      background-color: #ffffff;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:before,
+    &-checkbox[type="checkbox"]:not(:checked)+label:before {
+      border-radius: 2px;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after,
+    &-checkbox[type="checkbox"]:not(:checked)+label:after{
+      content: "";
+      position: absolute;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after,
+    &-checkbox[type="checkbox"]:not(:checked)+label:after {
+      left: 4px;
+      top: 6px;
+      width: 16px;
+      height: 7px;
+      border-radius: 1px;
+      border-left: 2px solid #FF4500;
+      border-bottom: 2px solid #FF4500;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+
+    &-checkbox[type="checkbox"]:not(:checked)+label:after {
+      opacity: 0;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after {
+      opacity: 1;
+    }
+
+  }
+  &__button{
+    width: 160px;
+  }
+
+}
+
+
+
+@media (max-width: 1200px) {
+  .modal{
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: 85%;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal{
+    &__container {
+      width: 90%;
+    }
+  }
+}
