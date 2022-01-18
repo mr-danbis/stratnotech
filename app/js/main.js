@@ -3,7 +3,9 @@ $.noConflict();
 $(document).ready(function () {
   $(".slider").owlCarousel({
     items: 1,
-    margin: 50,
+    margin: 60,
+    URLhashListener: true,
+    startPosition: 'URLHash'
   });
 });
 
@@ -34,14 +36,15 @@ $('.sidebar__menu-link').click(function (event) {
 });
 
 //Closing sidebar beyond its borders
-jQuery(function($){
-	$(document).mouseup(function (e){ // событие клика по веб-документу
-		var div = $(".sidebar"); // тут указываем ID элемента
-		if (!div.is(e.target) // если клик был не по нашему блоку
-		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
-          $(".sidebar").addClass("sidebar--hidden");
-		}
-	});
+jQuery(function ($) {
+  $(document).mouseup(function (e) { // событие клика по веб-документу
+    var div = $(".sidebar"); // тут указываем ID элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+      &&
+      div.has(e.target).length === 0) { // и не по его дочерним элементам
+      $(".sidebar").addClass("sidebar--hidden");
+    }
+  });
 });
 
 
@@ -49,17 +52,30 @@ jQuery(function($){
 $('.map__write-btn').on('click', function () {
   $('.modal').removeClass('modal__hidden').addClass('modal__visible');
 });
-jQuery(function($){
-	$(document).mouseup(function (e){ // событие клика по веб-документу
-		var div = $(".modal"); // тут указываем ID элемента
-		if (!div.is(e.target) // если клик был не по нашему блоку
-		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
-          $(".modal").addClass("modal__hidden");
-		}
-	});
+jQuery(function ($) {
+  $(document).mouseup(function (e) { // событие клика по веб-документу
+    var div = $(".modal"); // тут указываем ID элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+      &&
+      div.has(e.target).length === 0) { // и не по его дочерним элементам
+      $(".modal").addClass("modal__hidden");
+    }
+  });
 });
 
 
 if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/") {
   $('.header__menu-item--home').addClass('active-link');
 }
+
+
+// $('.reviews__title').on('click', function () {
+//   var step;
+//   for (step = 1; step < 8; step++) {
+//     if ($('.owl-item:nth-child(' + step + ')').hasClass('active')) {
+//       $('.slider-logos-link--' + step).addClass('active-logo');
+//     } else {
+//       $('.slider-logos-link--' + step).removeClass('active-logo');
+//     }
+//   }
+// });
