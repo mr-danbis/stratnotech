@@ -1,8 +1,6 @@
 .header {
-  height: 90px;
-  margin-top: 28px;
   color: #fff;
-
+  margin-top: 28px;
   &__container {
     width: 84%;
     margin: auto;
@@ -31,11 +29,13 @@
     &-item{
       &--submenu{
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         position: relative;
         &:after{
           position: absolute;
-          top: 5px;
+          top: 10px;
           right: -20px;
           content: "";
           width: 11px;
@@ -58,7 +58,7 @@
     display: none;
     position: absolute;
     top: 15px;
-    margin-left: 20px;
+    margin-left: 25px;
     width: max-content;
     padding-top: 15px !important;
   }

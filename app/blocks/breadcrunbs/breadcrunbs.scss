@@ -1,0 +1,26 @@
+.breadcrumbs{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &__item{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #A09F9F;
+    position: relative;
+    &:not(:last-child){
+      &::after{
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: -18px;
+        width: 5px;
+        height: 8px;
+        background-image: url('/images/icons/arrow-bread.svg');
+      }
+      margin-right: 25px;
+    }
+    &--active{
+      color: #6A6868;
+    }
+  }
+}

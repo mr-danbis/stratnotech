@@ -11,6 +11,8 @@
 @import '../blocks/footer/footer';
 @import '../blocks/bottom/bottom';
 @import '../blocks/sidebar/sidebar';
+@import '../blocks/breadcrunbs/breadcrunbs';
+@import '../blocks/newsletter/newsletter';
 
 //main page blocks
 @import '../blocks/start/start';
@@ -22,5 +24,8 @@
 @import '../blocks/news/news';
 @import '../blocks/blog/blog';
 @import '../blocks/map/map';
-@import '../blocks/newsletter/newsletter';
 @import '../blocks/modal/modal';
+
+//service page blocks
+@import '../blocks/service-block/service-block';
+@import '../blocks/form/form';

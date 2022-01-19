@@ -1,0 +1,45 @@
+.form{
+  background-image: url('/images/form-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  &__wrapper>.modal{
+    display: block;
+    position: static;
+    transform: none;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .form{
+    &__wrapper>.modal {
+      width: 60%;
+    }
+    &__wrapper{
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .form {
+    &__wrapper>.modal {
+      width: 75%;
+    }
+    &__wrapper {
+      justify-content: end;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .form {
+    &__wrapper>.modal {
+      width: 85%;
+    }
+    &__wrapper {
+      justify-content: center;
+    }
+  }
+}

@@ -64,11 +64,12 @@ jQuery(function ($) {
 });
 
 
+// Active page
 if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/") {
   $('.header__menu-item--home').addClass('active-link');
 }
 
-
+// Changing color of logos in rewiews block in slider
 // $('.reviews__title').on('click', function () {
 //   var step;
 //   for (step = 1; step < 8; step++) {

@@ -65,6 +65,13 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   background-position: center;
 }
 
+.box-pages{
+   background-image: url(/images/service-bg.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -140,6 +147,16 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   @include adaptiv-font(40,25);
   font-weight: 300;
   letter-spacing: 0.03em;
+}
+
+.pages-title{
+  font-style: normal;
+  font-weight: normal;
+  @include adaptiv-font(40,25);
+  text-transform: capitalize;
+  color: #FFFFFF;
+  @include adaptiv-marginBottom(98,30);
+  @include adaptiv-marginTop(96, 30);
 }
 
 .text{
