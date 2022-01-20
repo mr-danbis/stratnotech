@@ -80,3 +80,17 @@ if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyb
 //     }
 //   }
 // });
+
+$('.catalog__btn').on('click', function (){
+  if ($('.catalog').hasClass('catalog--visible')) {
+    $('.catalog').removeClass('catalog--visible');
+  } else {
+    $('.catalog').addClass('catalog--visible');
+  }
+
+  if ($('.catalog__btn-img').hasClass('catalog__btn-img--translate')) {
+    $('.catalog__btn-img').removeClass('catalog__btn-img--translate');
+  } else {
+    $('.catalog__btn-img').addClass('catalog__btn-img--translate');
+  }
+});

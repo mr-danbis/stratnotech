@@ -63,6 +63,12 @@ $orange: #FF4500;
   height: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
 }
 
+@mixin adaptiv-width($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  width: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth}));
+}
+
 @mixin adaptiv-marginBottom($pcValue, $mobValue) {
   $addSize: $pcValue - $mobValue;
   $differenceWidth: $maxWidth - $minWidth;
