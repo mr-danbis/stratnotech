@@ -14,6 +14,9 @@
 @import '../blocks/sidebar/sidebar';
 @import '../blocks/newsletter/newsletter';
 @import '../blocks/catalog/catalog';
+@import '../blocks/form/form';
+@import '../blocks/modal/modal';
+@import '../blocks/map/map';
 
 //main page blocks
 @import '../blocks/start/start';
@@ -24,12 +27,12 @@
 @import '../blocks/reviews/reviews';
 @import '../blocks/news/news';
 @import '../blocks/blog/blog';
-@import '../blocks/map/map';
-@import '../blocks/modal/modal';
 
 //service page blocks
-@import '../blocks/service-block/service-block';
-@import '../blocks/form/form';
+@import '../blocks/service-list/service-list';
 
 //technologies page blocks
 @import '../blocks/technologies-list/technologies-list';
+
+//industries page blocks
+@import '../blocks/industries-list/industries-list';

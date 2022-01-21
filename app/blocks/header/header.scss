@@ -63,11 +63,13 @@
     padding-top: 15px !important;
   }
   &__submenu li{
-    border-bottom: 1px solid #A09F9F;
     background-color: #fff;
     &:hover{
       background-color: #6A6868;
       transition: all .3s;
+    }
+    &:not(:last-child){
+      border-bottom: 1px solid #A09F9F;
     }
   }
   
