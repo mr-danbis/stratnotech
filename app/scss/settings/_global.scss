@@ -102,8 +102,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 
 .link-all{
   font-weight: normal;
-  font-size: 18px;
-  letter-spacing: 0.015em;
+  @include adaptiv-font(18,14);
   color: $orange;
   border-bottom: 1px solid transparent;
   &:hover{

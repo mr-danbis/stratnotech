@@ -1,40 +1,46 @@
-.technologies{
+.technologies {
   @include adaptiv-paddingBottom(222, 60);
-  &__title{
+
+  &__title {
     margin-bottom: 24px;
   }
-  &__list{
+
+  &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    @include adaptiv-gridGap(55,10);
+    @include adaptiv-gridGap(55, 10);
     margin-bottom: 26px;
   }
+
   &__link {
     display: block;
-    &:hover{
+    &:hover {
       opacity: 0.5;
       transition: opacity 0.5s;
     }
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        background-image: url(/images/technologies/#{$i}.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+  }
+
+  @for $i from 1 through 6 {
+    &__link:nth-child(#{$i})>&__top {
+      background-image: url(/images/technologies/#{$i}.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
-  &__item{
-    @include adaptiv-height(310,100);
+
+  &__top {
+    @include adaptiv-height(310, 100);
     position: relative;
     color: $textColor;
   }
-  &__item-title{
+
+  &__top-title {
     position: absolute;
     bottom: 19px;
     left: 19px;
     height: 88px;
     font-weight: normal;
-    @include adaptiv-font(18,11);
+    @include adaptiv-font(18, 11);
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -45,8 +51,9 @@
     align-items: center;
     padding-left: 21px;
     padding-right: 54px;
-    @include adaptiv-paddingRight(54,21);
-    &_line{
+    @include adaptiv-paddingRight(54, 21);
+
+    &_line {
       width: 36px;
       height: 2px;
       background-color: $orange;
@@ -57,8 +64,8 @@
 
 @media (max-width: 1220px) {
   .technologies {
-    &__item{
-      &-title{
+    &__top {
+      &-title {
         right: 19px;
       }
     }
@@ -71,7 +78,8 @@
     &__list {
       grid-template-columns: repeat(2, 1fr);
     }
-    &__item {
+
+    &__top {
       &-title {
         height: auto;
         padding-top: 10px;
@@ -86,7 +94,8 @@
     &__list {
       grid-template-columns: repeat(1, 1fr);
     }
-    &__item{
+
+    &__top {
       height: 15vh;
     }
   }

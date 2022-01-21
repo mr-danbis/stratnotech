@@ -182,6 +182,14 @@
   }
 }
 
+@media (max-width: 500px) {
+  .modal {
+    &__textarea{
+      height: 8vh;
+    }
+  }
+}
+
 @media (max-width: 450px) {
   .modal{
     &__container {

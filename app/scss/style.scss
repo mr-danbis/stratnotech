@@ -5,13 +5,13 @@
 @import 'settings/libs';
 @import 'settings/global';
 @import 'settings/slider';
+@import 'settings/breadcrunbs';
 
 //common blocks
 @import '../blocks/header/header';
 @import '../blocks/footer/footer';
 @import '../blocks/bottom/bottom';
 @import '../blocks/sidebar/sidebar';
-@import '../blocks/breadcrunbs/breadcrunbs';
 @import '../blocks/newsletter/newsletter';
 @import '../blocks/catalog/catalog';
 
@@ -30,3 +30,6 @@
 //service page blocks
 @import '../blocks/service-block/service-block';
 @import '../blocks/form/form';
+
+//technologies page blocks
+@import '../blocks/technologies-list/technologies-list';
