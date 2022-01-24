@@ -11,6 +11,7 @@
   &__role {
     @include adaptiv-marginBottom(38,15);
     &-btn{
+      margin-bottom: 23px;
       background-color: #FF4500;
     }
     &-list {
@@ -43,6 +44,7 @@
 
   &__technologies {
     &-btn {
+      margin-bottom: 23px;
       background-color: #739DB2;
     }
     &-list {
