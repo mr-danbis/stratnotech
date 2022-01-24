@@ -5,7 +5,7 @@
 @import 'settings/libs';
 @import 'settings/global';
 @import 'settings/slider';
-@import 'settings/breadcrunbs';
+@import 'settings/breadcrumbs';
 
 //common blocks
 @import '../blocks/header/header';
@@ -29,10 +29,13 @@
 @import '../blocks/blog/blog';
 
 //service page blocks
-@import '../blocks/service-list/service-list';
+@import '../blocks/service/service';
 
 //technologies page blocks
 @import '../blocks/technologies-list/technologies-list';
 
 //industries page blocks
 @import '../blocks/industries-list/industries-list';
+
+//equipment page blocks
+@import '../blocks/equipment/equipment';

@@ -130,12 +130,12 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   display: inline-block;
   background-color: $orange;
   border-radius: 5px;
-  @include adaptiv-font(18,13);
+  @include adaptiv-font(18,11);
   color: #FFFFFF;
-  @include adaptiv-paddingTop(18, 10);
-  @include adaptiv-paddingBottom(18, 10);
-  @include adaptiv-paddingLeft(30, 15);
-  @include adaptiv-paddingRight(30, 15);
+  @include adaptiv-paddingTop(18, 8);
+  @include adaptiv-paddingBottom(18, 8);
+  @include adaptiv-paddingLeft(30, 8);
+  @include adaptiv-paddingRight(30, 8);
   &:hover{
     background-color: #FF5F23;
     color: #DADADA;

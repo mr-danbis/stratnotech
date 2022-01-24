@@ -74,6 +74,12 @@ if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyb
 if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/industries.html") {
   $('.header__menu-item--industries').addClass('active-link');
 }
+if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/equipment.html") {
+  $('.header__menu-item--equipment').addClass('active-link');
+}
+if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/technologies.html") {
+  $('.header__menu-item--technologies').addClass('active-link');
+}
 
 // Changing color of logos in rewiews block in slider
 // $('.reviews__title').on('click', function () {
@@ -87,7 +93,9 @@ if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyb
 //   }
 // });
 
-$('.catalog__btn').on('click', function (){
+
+//Catalog view
+$('.catalog__btn').on('click', function () {
   if ($('.catalog').hasClass('catalog--visible')) {
     $('.catalog').removeClass('catalog--visible');
   } else {
@@ -98,5 +106,28 @@ $('.catalog__btn').on('click', function (){
     $('.catalog__btn-img').removeClass('catalog__btn-img--translate');
   } else {
     $('.catalog__btn-img').addClass('catalog__btn-img--translate');
+  }
+});
+
+
+//Equipment filter
+$('.equipment-list').hide();
+$('.equipment-btn').click(function (event) {
+  $(this).next().slideToggle(200);
+});
+
+$('.equipment__role-btn').on('click', function () {
+  if ($('.equipment-btn__icon-1').hasClass('equipment-btn__icon--translate')) {
+    $('.equipment-btn__icon-1').removeClass('equipment-btn__icon--translate');
+  } else {
+    $('.equipment-btn__icon-1').addClass('equipment-btn__icon--translate');
+  }
+});
+
+$('.equipment__technologies-btn').on('click', function () {
+  if ($('.equipment-btn__icon-2').hasClass('equipment-btn__icon--translate')) {
+    $('.equipment-btn__icon-2').removeClass('equipment-btn__icon--translate');
+  } else {
+    $('.equipment-btn__icon-2').addClass('equipment-btn__icon--translate');
   }
 });

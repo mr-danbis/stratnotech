@@ -55,6 +55,7 @@
   }
 
   &__submenu{
+    z-index: 9999;
     display: none;
     position: absolute;
     top: 15px;
