@@ -80,6 +80,9 @@ if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyb
 if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/technologies.html") {
   $('.header__menu-item--technologies').addClass('active-link');
 }
+if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/contacts.html") {
+  $('.header__menu-item--contacts').addClass('active-link');
+}
 
 // Changing color of logos in rewiews block in slider
 // $('.reviews__title').on('click', function () {
