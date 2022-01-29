@@ -74,30 +74,30 @@ $('.close-button--modal').on('click', function () {
   $(".modal").addClass("modal__hidden");
 });
 
-// var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-var homePage = 'http://localhost:3000/';
+var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+// var homePage = 'http://localhost:3000/';
 
 
 // Active page
 if (window.location.href == homePage) {
   $('.header__menu-item--home').addClass('active-link');
 }
-if (window.location.href == homePage + "service.html") {
+if (window.location.href == homePage + 'service.html') {
   $('.header__menu-item--service').addClass('active-link');
 }
-if (window.location.href == homePage + "technologies.html") {
+if (window.location.href == homePage + 'technologies.html') {
   $('.header__menu-item--technologies').addClass('active-link');
 }
-if (window.location.href == homePage + "industries.html") {
+if (window.location.href == homePage + 'industries.html') {
   $('.header__menu-item--industries').addClass('active-link');
 }
-if (window.location.href == homePage + "equipment.html") {
+if (window.location.href == homePage + 'equipment.html') {
   $('.header__menu-item--equipment').addClass('active-link');
 }
-if (window.location.href == homePage + "about.html") {
+if (window.location.href == homePage + 'about.html') {
   $('.header__menu-item--about').addClass('active-link');
 }
-if (window.location.href == homePage + "contacts.html") {
+if (window.location.href == homePage + 'contacts.html') {
   $('.header__menu-item--contacts').addClass('active-link');
 }
 
@@ -155,7 +155,7 @@ $('.seeMore').on('click', function () {
 });
 
 
-
+//Changing some moments in others pages
 if (window.location.href !== homePage) {
   $('.close-button--modal').css('display', 'none');
   $('.map__yandex').css('height', 'calc(260px + 540 * ((100vw - 270px) / 1650))');
