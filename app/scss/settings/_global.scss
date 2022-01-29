@@ -4,6 +4,7 @@ body {
   height: 100%;
   color: $textColor;
   font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 input::-webkit-input-placeholder {
@@ -57,12 +58,27 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 
 
 .box {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background-image: url(/images/start-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  flex-direction: column;
+  &__content{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  &__video{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+  }
 }
 
 .box-pages{
@@ -83,12 +99,15 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 }
 
 .main {
+  background-color:#fff;
+  z-index: 5;
   flex: 1 0 auto;
   position: relative;
 }
 
 .footer {
   flex: 0 0 auto;
+  z-index: 0;
 }
 
 .container {
@@ -119,6 +138,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   padding: 12px 14px;
   border: 1px solid $orange;
   border-radius: 5px;
+  margin-right: 1px;
   &:hover{
     background-color: $orange;
     color: #fff;
@@ -147,13 +167,13 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   @include adaptiv-font(40,25);
   font-weight: 300;
   letter-spacing: 0.03em;
+
 }
 
 .pages-title{
   font-style: normal;
   font-weight: normal;
   @include adaptiv-font(40,25);
-  text-transform: capitalize;
   color: #FFFFFF;
   @include adaptiv-marginBottom(98,30);
   @include adaptiv-marginTop(96, 30);
@@ -162,6 +182,130 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 .text{
   font-weight: 400;
   @include adaptiv-font(16, 13);
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+
+.close-button div {
+  cursor: pointer;
+  position: relative;
+  height: 68px;
+  width: 50px;
+}
+
+.close-button .leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.close-button .rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-button .close-btn {
+  margin: 54px 0 0 -5px;
+  position: absolute;
+  color: #fff;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+
+.close-button div:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+
+.close-button div:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.close-button div:hover .close-btn {
+  opacity: 1;
+}
+
+
+.close-button--modal {
+  margin-bottom: 15px;
+  justify-content: end;
+  display: flex;
+  height: 20%;
+}
+
+.close-button--modal div {
+  cursor: pointer;
+  position: relative;
+  height: 68px;
+  width: 50px;
+}
+
+.close-button--modal .leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.close-button--modal .rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-button--modal .close-btn {
+  margin: 54px 0 0 -5px;
+  position: absolute;
+  color: #fff;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+
+.close-button--modal div:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: #fff;
+}
+
+.close-button--modal div:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+
+.close-button--modal div:hover .close-btn {
+  opacity: 1;
 }
 
 @media (max-width: 1600px) {

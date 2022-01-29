@@ -15,12 +15,23 @@
   &__link {
     display: block;
     &:hover {
-      opacity: 0.5;
-      transition: opacity 0.5s;
+      opacity: 0.8;
+      transition: opacity .3s;
+      .technologies__top-title_line{
+        animation-name: moveRight;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+      }
+    }
+    &:last-child{
+      display: none;
+    }
+    &--visible{
+      display: block !important;
     }
   }
 
-  @for $i from 1 through 6 {
+  @for $i from 1 through 7 {
     &__link:nth-child(#{$i})>&__top {
       background-image: url(/images/technologies/#{$i}.png);
       background-repeat: no-repeat;
@@ -50,7 +61,6 @@
     display: flex;
     align-items: center;
     padding-left: 21px;
-    padding-right: 54px;
     @include adaptiv-paddingRight(54, 21);
 
     &_line {
@@ -98,5 +108,14 @@
     &__top {
       height: 15vh;
     }
+  }
+}
+
+@keyframes moveRight{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(30px);
   }
 }

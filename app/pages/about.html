@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../blocks/head/head.html')
+
+<body>
+  <div class="wrapper">
+
+    @@include('../blocks/sidebar/sidebar.html')
+    <!-- /.sidebar -->
+
+    <div class="box-pages">
+      @@include('../blocks/header/header.html')
+      <!-- /.header -->
+      <div class="container">
+        <h1 class="pages-title">О нас</h1>
+      </div>
+    </div>
+
+    <main class="main">
+
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="breadcrumbs__wrapper">
+            <a class="breadcrumbs__item" href="/">Главная</a>
+            <a class="breadcrumbs__item breadcrumbs__item--active" href="contacts.html">О нас</a>
+          </div>
+        </div>
+      </section>
+      <!-- /.breadcrumbs -->
+
+
+      @@include('../blocks/form/form.html')
+      <!-- /.form -->
+
+      @@include('../blocks/reviews/reviews.html')
+      <!-- /.reviews -->
+      
+      @@include('../blocks/map/map.html')
+      <!-- /.map -->
+
+      @@include('../blocks/newsletter/newsletter.html')
+      <!-- /.newsletter -->
+
+    </main>
+    <!-- /.main -->
+
+
+    @@include('../blocks/footer/footer.html')
+    <!-- /.footer -->
+    @@include('../blocks/bottom/bottom.html')
+    <!-- /.bottom -->
+
+  </div>
+  <!-- /.wrapper -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

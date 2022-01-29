@@ -38,6 +38,15 @@
     flex-direction: column;
     justify-content: center;
   }
+  &__list>.technologies__item{
+    &:hover {
+      .technologies__top-title_line {
+        animation-name: moveRight;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
   &__box{
     display: flex;
     align-items: center;

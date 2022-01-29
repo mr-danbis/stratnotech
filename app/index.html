@@ -17,7 +17,7 @@
     <header class="sidebar sidebar--hidden">
   <div class="header__container sidebar__container">
 
-    <div class="sidebar__close-btn">
+    <div class="close-button">
       <div>
         <div class="leftright"></div>
         <div class="rightleft"></div>
@@ -34,7 +34,7 @@
         <li class="header__menu-item header__menu-item--submenu sidebar__menu-item--submenu sidebar__menu-item">
           <a class="header__menu-link header__menu-link--notactive sidebar__menu-link" href="service.html">УСЛУГИ</a>
           <ul class="sidebar__submenu">
-            <li><a href="">Решения для клиента</a></li>
+            <li><a href="resheniya-dlya-klienta.html">Решения для клиента</a></li>
             <li><a href="">Комплексные проекты</a></li>
             <li><a href="">Промышленная автоматизация</a></li>
             <li><a href="">Модернизация производства</a></li>
@@ -81,7 +81,7 @@
           </ul>
         </li>
         <li class="header__menu-item header__menu-item--submenu sidebar__menu-item--submenu sidebar__menu-item">
-          <a class="header__menu-link header__menu-link--notactive sidebar__menu-link" href="">О НАС</a>
+          <a class="header__menu-link header__menu-link--notactive sidebar__menu-link" href="about.html">О НАС</a>
           <ul class="sidebar__submenu">
             <li><a href="">О компании</a></li>
             <li><a href="">Сотрудники</a></li>
@@ -109,7 +109,8 @@
     <!-- /.sidebar --> 
 
     <div class="box">
-      <header class="header">
+      <div class="box__content">
+        <header class="header">
   <div class="header__container">
     <div class="header__wrapper">
 
@@ -125,7 +126,7 @@
         <li class="header__menu-item header__menu-item--submenu header__menu-item--service">
           <a class="header__menu-link header__submenu-link" href="service.html">УСЛУГИ</a>
           <ul class="header__submenu">
-            <li><a href="">Решения для клиента</a></li>
+            <li><a href="resheniya-dlya-klienta.html">Решения для клиента</a></li>
             <li><a href="">Комплексные проекты</a></li>
             <li><a href="">Промышленная автоматизация</a></li>
             <li><a href="">Модернизация производства</a></li>
@@ -172,8 +173,8 @@
             <li><a href="">Delta</a></li>
           </ul>
         </li>
-        <li class="header__menu-item header__menu-item--submenu">
-          <a class="header__menu-link" href="">О НАС</a>
+        <li class="header__menu-item header__menu-item--submenu header__menu-item--about">
+          <a class="header__menu-link" href="about.html">О НАС</a>
           <ul class="header__submenu">
             <li><a href="">О компании</a></li>
             <li><a href="">Сотрудники</a></li>
@@ -204,8 +205,8 @@
     </div>
   </div>
 </header>
-      <!-- /.header --> 
-      <section class="start">
+        <!-- /.header --> 
+        <section class="start">
   <div class="container">
     <div class="start__wrapper">
       <h1 class="start__title">
@@ -221,7 +222,12 @@
     </div>
   </div>
 </section>
-      <!-- /.start -->
+        <!-- /.start -->
+      </div>
+      <video class="box__video" preload="auto" autoplay muted loop>
+        <source type="video/mp4" src="/videos/video.mp4">
+        <source type="video/avi" src="/videos/video.avi">
+      </video>
     </div>
 
     <main class="main">
@@ -289,7 +295,7 @@
         <a class="about__btn btn" href="">Подробнее</a>
       </div>
 
-      <video class="about__video" src="/videos/video-convert.mp4" poster="images/video.png" autoplay controls loops></video>
+      <iframe class="about__video" src="https://www.youtube.com/embed/WeCGfCdW1GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </div>
   </div>
@@ -357,9 +363,17 @@
           </div>
         </a>
 
+        <a class="technologies__link" href="">
+          <div class="technologies__top">
+            <h3 class="technologies__top-title">Технологии/методы нагрева
+              <span class="technologies__top-title_line"></span>
+            </h3>
+          </div>
+        </a>
+
       </div>
 
-      <a class="link-all" href="technologies.html">Показать ещё</a>
+      <button class="link-all seeMore">Показать ещё</button>
     </div>
   </div>
 </section>
@@ -441,25 +455,25 @@
 
       <div class="slider__inner">
         <div class="slider-logos">
-          <a class="slider-logos-link slider-logos-link--1" href="#1">
+          <a class="slider-logos-link" href="#1">
             <img src="images/reviews/1.png" alt="Reviews: logo">
           </a>
-          <a class="slider-logos-link slider-logos-link--2" href="#2">
+          <a class="slider-logos-link" href="#2">
             <img src="images/reviews/2.png" alt="Reviews: logo">
           </a>
-          <a class="slider-logos-link slider-logos-link--3" href="#3">
+          <a class="slider-logos-link" href="#3">
             <img src="images/reviews/3.png" alt="Reviews: logo">
           </a>
           <a class="slider-logos-link slider-logos-link--4" href="#4">
             <img src="images/reviews/4.png" alt="Reviews: logo">
           </a>
-          <a class="slider-logos-link slider-logos-link--5" href="#5">
+          <a class="slider-logos-link" href="#5">
             <img src="images/reviews/5.png" alt="Reviews: logo">
           </a>
-          <a class="slider-logos-link slider-logos-link--6" href="#6">
+          <a class="slider-logos-link" href="#6">
             <img src="images/reviews/6.png" alt="Reviews: logo">
           </a>
-          <a class="slider-logos-link slider-logos-link--7" href="#7">
+          <a class="slider-logos-link" href="#7">
             <img src="images/reviews/7.png" alt="Reviews: logo">
           </a>
         </div>
@@ -932,6 +946,13 @@
 
       <div class="modal modal__hidden">
   <div class="modal__container">
+    <div class="close-button--modal">
+      <div>
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+        <span class="close-btn">закрыть</span>
+      </div>
+    </div>
     <h1 class="modal__title">
       Заполните форму обратной связи и наш
       специалист свяжется с Вами
@@ -973,7 +994,7 @@
 
         <div class="footer__column">
           <a class="footer__link footer__link--main" href="service.html">Услуги</a>
-          <a class="footer__link" href="">Решения для клиента</a>
+          <a class="footer__link" href="resheniya-dlya-klienta.html">Решения для клиента</a>
           <a class="footer__link" href="">Комплексные проекты</a>
           <a class="footer__link" href="">Промышленная автоматизация</a>
           <a class="footer__link" href="">Модернизация производства</a>
@@ -1017,7 +1038,7 @@
         </div>
 
         <div class="footer__column">
-          <a class="footer__link footer__link--main" href="">О нас</a>
+          <a class="footer__link footer__link--main" href="about.html">О нас</a>
           <a class="footer__link" href="">О компании</a>
           <a class="footer__link" href="">Сотрудники</a>
           <a class="footer__link" href="">Партнеры</a>

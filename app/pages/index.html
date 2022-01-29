@@ -9,10 +9,16 @@
     <!-- /.sidebar --> 
 
     <div class="box">
-      @@include('../blocks/header/header.html')
-      <!-- /.header --> 
-      @@include('../blocks/start/start.html')
-      <!-- /.start -->
+      <div class="box__content">
+        @@include('../blocks/header/header.html')
+        <!-- /.header --> 
+        @@include('../blocks/start/start.html')
+        <!-- /.start -->
+      </div>
+      <video class="box__video" preload="auto" autoplay muted loop>
+        <source type="video/mp4" src="/videos/video.mp4">
+        <source type="video/avi" src="/videos/video.avi">
+      </video>
     </div>
 
     <main class="main">

@@ -16,6 +16,9 @@
     margin-bottom: 11px;
     width: 30%;
   }
+  &:hover &__title{
+    border-bottom: 1px solid #FF4500;
+  }
   &__title {
     color: #FF4500;
     font-style: normal;
@@ -23,9 +26,6 @@
     @include adaptiv-font(16,10);
     text-align: center;
     border-bottom: 1px solid transparent;
-    &:hover{
-      border-bottom: 1px solid #FF4500;
-    }
   }
 
   &__btn {

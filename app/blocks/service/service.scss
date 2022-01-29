@@ -22,4 +22,7 @@
 
 .service__list {
   margin-bottom: 0;
+  &>:last-child{
+    display: block;
+  }
 }

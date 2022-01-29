@@ -3,9 +3,18 @@ $.noConflict();
 $(document).ready(function () {
   $(".slider").owlCarousel({
     items: 1,
-    margin: 60,
+    margin: 1000,
     URLhashListener: true,
-    startPosition: 'URLHash'
+    startPosition: 'URLHash',
+  });
+
+  $(".slider").on("changed.owl.carousel", function(event) {
+    var page = event.page.index;
+    $(".slider-logos")
+      .children(".slider-logos-link")
+      .removeClass("active")
+      .eq(page)
+      .addClass("active");
   });
 });
 
@@ -18,7 +27,7 @@ $('.header__sidebar-btn').on('click', function () {
 });
 
 //Closing sidebar
-$('.sidebar__close-btn').on('click', function () {
+$('.close-button').on('click', function () {
   if ($('.sidebar').hasClass('sidebar--hidden')) {
     $('.sidebar').removeClass('sidebar--hidden');
   } else {
@@ -52,49 +61,45 @@ jQuery(function ($) {
 $('.map__write-btn').on('click', function () {
   $('.modal').removeClass('modal__hidden').addClass('modal__visible');
 });
-jQuery(function ($) {
-  $(document).mouseup(function (e) { // событие клика по веб-документу
-    var div = $(".modal"); // тут указываем ID элемента
-    if (!div.is(e.target) // если клик был не по нашему блоку
-      &&
-      div.has(e.target).length === 0) { // и не по его дочерним элементам
-      $(".modal").addClass("modal__hidden");
-    }
-  });
+$(document).mouseup(function (e) { // событие клика по веб-документу
+  var div = $(".modal"); // тут указываем ID элемента
+  if (!div.is(e.target) // если клик был не по нашему блоку
+    &&
+    div.has(e.target).length === 0) { // и не по его дочерним элементам
+    $(".modal").addClass("modal__hidden");
+  }
 });
+
+$('.close-button--modal').on('click', function () {
+  $(".modal").addClass("modal__hidden");
+});
+
+// var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+var homePage = 'http://localhost:3000/';
 
 
 // Active page
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/") {
+if (window.location.href == homePage) {
   $('.header__menu-item--home').addClass('active-link');
 }
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/service.html") {
+if (window.location.href == homePage + "service.html") {
   $('.header__menu-item--service').addClass('active-link');
 }
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/industries.html") {
-  $('.header__menu-item--industries').addClass('active-link');
-}
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/equipment.html") {
-  $('.header__menu-item--equipment').addClass('active-link');
-}
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/technologies.html") {
+if (window.location.href == homePage + "technologies.html") {
   $('.header__menu-item--technologies').addClass('active-link');
 }
-if (window.location.href == "https://stratnanotech-static.devitgso.iron.hostflyby.net/contacts.html") {
+if (window.location.href == homePage + "industries.html") {
+  $('.header__menu-item--industries').addClass('active-link');
+}
+if (window.location.href == homePage + "equipment.html") {
+  $('.header__menu-item--equipment').addClass('active-link');
+}
+if (window.location.href == homePage + "about.html") {
+  $('.header__menu-item--about').addClass('active-link');
+}
+if (window.location.href == homePage + "contacts.html") {
   $('.header__menu-item--contacts').addClass('active-link');
 }
-
-// Changing color of logos in rewiews block in slider
-// $('.reviews__title').on('click', function () {
-//   var step;
-//   for (step = 1; step < 8; step++) {
-//     if ($('.owl-item:nth-child(' + step + ')').hasClass('active')) {
-//       $('.slider-logos-link--' + step).addClass('active-logo');
-//     } else {
-//       $('.slider-logos-link--' + step).removeClass('active-logo');
-//     }
-//   }
-// });
 
 
 //Catalog view
@@ -134,3 +139,24 @@ $('.equipment__technologies-btn').on('click', function () {
     $('.equipment-btn__icon-2').addClass('equipment-btn__icon--translate');
   }
 });
+
+
+
+//See more in techonogies block
+$('.seeMore').on('click', function () {
+  console.log('Hello');
+  if ($('.technologies__link:last-child').hasClass('technologies__link--visible')) {
+    $('.technologies__link:last-child').removeClass('technologies__link--visible');
+    $(this).text('Показать ещё');
+  } else {
+    $('.technologies__link:last-child').addClass('technologies__link--visible');
+    $(this).text('Скрыть');
+  }
+});
+
+
+
+if (window.location.href !== homePage) {
+  $('.close-button--modal').css('display', 'none');
+  $('.map__yandex').css('height', 'calc(260px + 540 * ((100vw - 270px) / 1650))');
+}

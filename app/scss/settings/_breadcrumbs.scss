@@ -4,7 +4,7 @@
   &__item{
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    @include adaptiv-font(14,10);
     color: #A09F9F;
     position: relative;
     &:not(:last-child){

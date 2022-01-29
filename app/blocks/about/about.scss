@@ -23,6 +23,7 @@
     right: 0;
     top: 80px;
     width: 45%;
+    height: 350px;
   }
 }
 
@@ -30,7 +31,6 @@
   .about{
     &__video{
       position: static;
-      object-fit: cover;
     }
   }
 }
@@ -60,6 +60,7 @@
     }
     &__video {
       width: 100%;
+      @include adaptiv-height(750,150);
     }
   }
 }
