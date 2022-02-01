@@ -27,6 +27,7 @@
       @include adaptiv-font(16, 10);
     }
     &-item{
+      border-bottom: 2px solid transparent;
       &--submenu{
         display: flex;
         flex-direction: column;

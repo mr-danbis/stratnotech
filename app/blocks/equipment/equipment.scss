@@ -112,8 +112,15 @@
     &-grid{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 21px;
-      grid-row-gap: 21px;
+      @include adaptiv-gridColGap(21,8);
+      @include adaptiv-gridRowGap(21, 8);
+      &>.equipment__item {
+        &:last-child {
+          &>.equipment__item-contact{
+            display: none;
+          }
+        }
+      }
     }
     &-row{
       display: flex;
@@ -124,18 +131,36 @@
         align-items: center;
         justify-content: space-between;
         &:not(:last-child){
-          margin-bottom: 26px;
+          @include adaptiv-marginBottom(26,10);
         }
         &>.equipment__item-photo{
           width: 15% !important;
         }
         &:last-child{
           &>.equipment__item-title {
-            text-align: center;
+            display: none;
           }
           &>.equipment__item-photo {
-            width: 5% !important;
+            width: 8% !important;
             margin-bottom: 0;
+            margin-left: 25px;
+          }
+          &>.equipment__item-contact {
+            color: #FFFFFF;
+            width: 50%;
+            margin: auto;
+            &>.equipment__item-contact-title {
+              font-style: normal;
+              font-weight: normal;
+              @include adaptiv-font(24, 13);
+              margin-bottom: 14px;
+            }
+            &>.equipment__item-contact-text {
+              font-style: normal;
+              font-weight: normal;
+              @include adaptiv-font(16, 9);
+              line-height: 182.18%;
+            }
           }
         }
       }
@@ -247,9 +272,20 @@
           &:last-child{
             &>.equipment__item-photo {
               margin-bottom: 20px;
+              margin-left: 0;
             }
             &>.equipment__item-title {
               margin-bottom: 20px;
+            }
+            &>.equipment__item-contact {
+              width: 85%;
+              margin-bottom: 20px;
+              &>.equipment__item-contact-title {
+                text-align: center;
+              }
+              &>.equipment__item-contact-text {
+                text-align: center;
+              }
             }
           }
           &>.equipment__item-photo {
