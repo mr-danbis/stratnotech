@@ -111,6 +111,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      cursor: pointer;
+      .equipment__item-bottom{
+        transform: translateY(0);
+      }
+    }
     &-photo{
       margin-bottom: 25px;
       width: 60%;
@@ -128,8 +136,13 @@
       justify-content: center;
     }
     &-bottom{
-      background-color: rgba(115, 157, 178, 0.8);
-      @include adaptiv-padding(30, 15);
+      background-color: rgba(115, 157, 178, 1);
+      color: #fff;
+      position: absolute;
+      padding: 10px;
+      bottom: 0;
+      transform: translateY(100%);
+      transition: all .3s;
     }
     &-text{
       width: 85%;
@@ -148,13 +161,6 @@
       }
       &>.equipment__item-title{
         color: #fff;
-      }
-    }
-    &:nth-child(5){
-      padding: 0;
-      &>.equipment__item-bottom>.equipment__item-title {
-        color: #fff;
-        @include adaptiv-marginBottom(23,10);
       }
     }
   }
