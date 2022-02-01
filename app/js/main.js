@@ -144,7 +144,6 @@ $('.equipment__technologies-btn').on('click', function () {
 
 //See more in techonogies block
 $('.seeMore').on('click', function () {
-  console.log('Hello');
   if ($('.technologies__link:last-child').hasClass('technologies__link--visible')) {
     $('.technologies__link:last-child').removeClass('technologies__link--visible');
     $(this).text('Показать ещё');
@@ -160,3 +159,31 @@ if (window.location.href !== homePage) {
   $('.close-button--modal').css('display', 'none');
   $('.map__yandex').css('height', 'calc(260px + 540 * ((100vw - 270px) / 1650))');
 }
+
+$('.equipment__view-btn:first-child').on('click', function () {
+  if ($('.equipment__list').hasClass('equipment__list-row')) {
+    $('.equipment__list').removeClass('equipment__list-row');
+    $('.equipment__list').addClass('equipment__list-grid');
+  }
+  if ($('.equipment__item-title').hasClass('equipment__item-title-row')) {
+    $('.equipment__item-title').removeClass('equipment__item-title-row');
+    $('.equipment__item-title').addClass('equipment__item-title-grid');
+  }
+  $('.equipment__item-bottom').show();
+  $('.equipment__item-info>.equipment__item-text').hide();
+
+});
+
+$('.equipment__view-btn:nth-child(2)').on('click', function () {
+  if ($('.equipment__list').hasClass('equipment__list-grid')) {
+    $('.equipment__list').removeClass('equipment__list-grid');
+    $('.equipment__list').addClass('equipment__list-row');
+  }
+  if ($('.equipment__item-title').hasClass('equipment__item-title-grid')) {
+    $('.equipment__item-title').removeClass('equipment__item-title-grid');
+    $('.equipment__item-title').addClass('equipment__item-title-row');
+  }
+  $('.equipment__item-bottom').hide();
+  $('.equipment__item-info>.equipment__item-text').show();
+
+});
