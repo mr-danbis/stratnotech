@@ -22,7 +22,7 @@
       margin: auto;
     }
   }
-  @for $i from 2 through 6 {
+  @for $i from 1 through 6 {
     &__slider>.owl-stage-outer>.owl-stage>.owl-item:nth-child(#{$i})>.technologies__link>.technologies__top {
       background-image: url(/images/service/#{$i}.png) !important;
       background-repeat: no-repeat;

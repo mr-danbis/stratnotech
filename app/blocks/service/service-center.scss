@@ -1,0 +1,6 @@
+.service-center{
+  @include adaptiv-paddingBottom(92,30);
+  &__title{
+    margin-bottom: 30px;
+  }
+}
