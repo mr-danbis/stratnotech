@@ -16,6 +16,21 @@ $(document).ready(function () {
       .eq(page)
       .addClass("active");
   });
+
+  $(".partners__slider").owlCarousel({
+    responsiveClass: true,
+    responsive : {
+      0 : {
+        items: 2,
+      },
+      450 : {
+        items: 3,
+      },
+      850 : {
+        items: 5,
+      },
+    }
+  });
 });
 
 
