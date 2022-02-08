@@ -15,8 +15,6 @@
   &__link {
     display: block;
     &:hover {
-      opacity: 0.8;
-      transition: opacity .3s;
       .technologies__top-title_line{
         animation-name: moveRight;
         animation-duration: .5s;

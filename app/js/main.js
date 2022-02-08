@@ -31,6 +31,24 @@ $(document).ready(function () {
       },
     }
   });
+
+  $(".service-other__slider").owlCarousel({
+    responsiveClass: true,
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 10,
+      },
+      450 : {
+        items: 2,
+        margin: 15,
+      },
+      850 : {
+        items: 3,
+        margin: 56,
+      },
+    }
+  });
 });
 
 
