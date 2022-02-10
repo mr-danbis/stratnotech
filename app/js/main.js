@@ -34,6 +34,8 @@ $(document).ready(function () {
 
   $(".service-other__slider").owlCarousel({
     responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
     responsive : {
       0 : {
         items: 1,
@@ -189,10 +191,15 @@ $('.seeMore').on('click', function () {
 
 //Changing some moments in others pages
 if (window.location.href !== homePage) {
-  $('.close-button--modal').css('display', 'none');
   $('.map__yandex').css('height', 'calc(260px + 540 * ((100vw - 270px) / 1650))');
 }
 
+if (window.location.href !== homePage  && window.location.href !== homePage + 'team.html') {
+  $('.close-button--modal').css('display', 'none');
+}
+
+
+//Changing grid id equipment
 $('.equipment__view-btn:first-child').on('click', function () {
   if ($('.equipment__list').hasClass('equipment__list-row')) {
     $('.equipment__list').removeClass('equipment__list-row');
@@ -204,7 +211,7 @@ $('.equipment__view-btn:first-child').on('click', function () {
   }
   $('.equipment__item-bottom').show();
   $('.equipment__item-info>.equipment__item-text').hide();
-
+  $('.equipment__item-btn').hide();
 });
 
 $('.equipment__view-btn:nth-child(2)').on('click', function () {
@@ -218,5 +225,5 @@ $('.equipment__view-btn:nth-child(2)').on('click', function () {
   }
   $('.equipment__item-bottom').hide();
   $('.equipment__item-info>.equipment__item-text').show();
-
+  $('.equipment__item-btn').show();
 });

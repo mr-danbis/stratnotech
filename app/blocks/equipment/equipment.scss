@@ -226,6 +226,9 @@
       text-align: center;
       line-height: 182.18%;
     }
+    &-btn{
+      display: none;
+    }
     &:last-child{
       background-color: #739DB2;
       &>.equipment__item-photo{

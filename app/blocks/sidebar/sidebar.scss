@@ -30,6 +30,7 @@
     margin-bottom: 110px;
     padding-left: 20px !important;
     &-item{
+      align-items: start;
       width: 100%;
       &:not(:last-child){
         margin-bottom: 30px;

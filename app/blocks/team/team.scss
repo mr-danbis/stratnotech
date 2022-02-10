@@ -1,0 +1,503 @@
+.team {
+  &-info {
+    margin-bottom: 88px;
+
+    &__title {
+      margin-bottom: 25px;
+    }
+  }
+
+  &-history {
+    margin-bottom: 88px;
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__dates{
+      margin-bottom: 24px;
+      &-item{
+        display: flex;
+        margin-bottom: 20px;
+        &:last-child>.team-history__dates-text::before{
+          height: 100%;
+        }
+      }
+      &-date{
+        @include adaptiv-font(16,11);
+        min-width: 86px;
+        height: 30px;
+        color: #FFFFFF;
+        background: #739DB2;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 17px;
+        position: relative;
+        &::after{
+          position: absolute;
+          content: "";
+          border-radius: 50%;
+          right: -20px;
+          width: 7px;
+          height: 7px;
+          background-color: #A09F9F;
+        }
+      }
+      &-text{
+        padding-left: 18px;
+        position: relative;
+        @include adaptiv-font(16,11);
+        &::before {
+          position: absolute;
+          content: "";
+          width: 1px;
+          height: 170%;
+          background-color: #A09F9F;
+          left: -1px;
+          top: 0px;
+        }
+      }
+    }
+  }
+
+  &-creators {
+    margin-bottom: 88px;
+
+    &__title {
+      margin-bottom: 43px;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include adaptiv-gridGap(56,20);
+    }
+
+    &__item {
+      &:hover{
+        cursor: pointer;
+      }
+      &:hover &-info {
+        box-shadow: 0px 10px 20px rgba(142, 140, 140, 0.25);
+      }
+      
+      &-img {
+        width: 100%;
+      }
+      
+      &-info {
+        transition: all .3s;
+        @include adaptiv-padding(20, 12);
+      }
+
+      &-name{
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(18,12);
+        color: #292929;
+        margin-bottom: 5px;
+      }
+
+      &-position{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        @include adaptiv-font(16, 11);
+        color: #292929;
+      }
+    }
+  }
+
+  &-preciousness{
+    margin-bottom: 77px;
+    &__title{
+      margin-bottom: 41px;
+    }
+  }
+
+  &-department {
+    margin-bottom: 88px;
+    &__title{
+      margin-bottom: 40px;
+    }
+    &__top{
+      display: flex;
+      margin-bottom: 22px;
+    }
+    &__director{
+      margin-right: 56px;
+      @include adaptiv-marginRight(56,20);
+      &-info{
+        @include adaptiv-padding(20,10);
+      }
+      &-name{
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(18,11);
+        margin-bottom: 5px;
+      }
+      &-position{
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(16, 10);
+      }
+    }
+    &__team{
+      &-info{
+        @include adaptiv-padding(20, 10);
+        @include adaptiv-font(18, 11);
+      }
+    }
+  }
+
+  &-client{
+    margin-bottom: 88px;
+    &__title{
+      margin-bottom: 43px;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include adaptiv-gridGap(56, 20);
+      margin-bottom: 41px;
+    }
+    &__item{
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover &-info {
+        box-shadow: 0px 10px 20px rgba(142, 140, 140, 0.25);
+      }
+      &:hover &-description {
+        opacity: 1;
+      }
+      &-img{
+        position: relative;
+      }
+      &-info{
+        transition: all .3s;
+        @include adaptiv-padding(20,10);
+      }
+      &-name {
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(18, 11);
+        margin-bottom: 5px;
+      }
+
+      &-position {
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(16, 10);
+      }
+
+      &-description{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(#000, 0.5);
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transition: all .3s;
+        @include adaptiv-paddingTop(220,5);
+        padding-left: 10px;
+        padding-right: 10px;
+        &_text,
+        &_mail,
+        &_tel{
+          color: #fff;
+          @include adaptiv-font(18,7);
+        }
+        &_text{
+          margin-bottom: 29px;
+        }
+        &_mail{
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        &_mail,
+        &_tel{
+          border-bottom: 1px solid transparent;
+          width: fit-content;
+          &:hover{
+            border-bottom: 1px solid #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &-work{
+    margin-bottom: 88px;
+    &__title{
+      margin-bottom: 18px;
+    }
+    &__text{
+      margin-bottom: 54px;
+    }
+  }
+
+  &-modal{
+    background-color: #739DB2;
+    z-index: 1000;
+    @include adaptiv-padding(50,15);
+    &__title{
+      font-weight: normal;
+      color: #FFFFFF;
+      width: 40%;
+      margin: auto;
+      margin-bottom: 34px;
+      @include adaptiv-font(20, 12);
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    &__box{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__input {
+      width: 49%;
+      margin-bottom: 16px;
+      border-radius: 5px;
+      border: none;
+      @include adaptiv-font(16, 10);
+      @include adaptiv-paddingTop(15, 7);
+      @include adaptiv-paddingBottom(15, 7);
+      @include adaptiv-paddingLeft(31, 15);
+      @include adaptiv-paddingRight(31, 15);
+      outline: none;
+
+      &::placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        @include adaptiv-font(16, 10);
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "*";
+
+        }
+      }
+    }
+
+    &__textarea {
+      width: 100%;
+      @include adaptiv-paddingTop(15, 7);
+      @include adaptiv-paddingBottom(15, 7);
+      @include adaptiv-paddingLeft(31, 15);
+      @include adaptiv-paddingRight(31, 15);
+      border: none;
+      margin-bottom: 25px;
+      border-radius: 5px;
+      height: 18vh;
+      resize: none;
+      outline: none;
+      @include adaptiv-font(16, 10);
+
+      &::placeholder {
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(16, 10);
+      }
+    }
+    &__agreement {
+      margin-bottom: 34px;
+      display: flex;
+
+      &-checkbox {
+        margin-right: 17px !important;
+        margin: 0;
+        width: 23px;
+        height: 23px;
+        border-radius: 3px;
+      }
+
+      &-label {
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(14, 10);
+        color: #FFFFFF;
+        width: 30%;
+      }
+
+
+      &-checkbox[type="checkbox"]:checked,
+      &-checkbox[type="checkbox"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label,
+      &-checkbox[type="checkbox"]:not(:checked)+label {
+        display: inline-block;
+        position: relative;
+        padding-left: 45px;
+        cursor: pointer;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label:before,
+      &-checkbox[type="checkbox"]:not(:checked)+label:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 23px;
+        height: 23px;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label:before,
+      &-checkbox[type="checkbox"]:not(:checked)+label:before {
+        border-radius: 2px;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label:after,
+      &-checkbox[type="checkbox"]:not(:checked)+label:after {
+        content: "";
+        position: absolute;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label:after,
+      &-checkbox[type="checkbox"]:not(:checked)+label:after {
+        left: 4px;
+        top: 6px;
+        width: 16px;
+        height: 7px;
+        border-radius: 1px;
+        border-left: 2px solid #FF4500;
+        border-bottom: 2px solid #FF4500;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+
+      &-checkbox[type="checkbox"]:not(:checked)+label:after {
+        opacity: 0;
+      }
+
+      &-checkbox[type="checkbox"]:checked+label:after {
+        opacity: 1;
+      }
+
+    }
+
+
+    &__file {
+      margin-bottom: 39px;
+      display: flex;
+      align-items: center;
+      &-img{
+        margin-right: 14px;
+      }
+      &-btn{
+        position: relative;
+      }
+      &-input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        font-size: 0;
+        cursor: pointer;
+      }
+      &-text{
+        font-weight: normal;
+        @include adaptiv-font(18,12);
+        letter-spacing: 0.015em;
+        color: #FFFFFF;
+
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .team {
+    &-client {
+      &__list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-modal{
+      &__title{
+        width: 70%;
+      }
+      &__agreement{
+        &-label{
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .team{
+    &-creators{
+      &__list{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &-department{
+      &__top{
+        flex-direction: column;
+      }
+      &__director{
+        display: flex;
+        margin-bottom: 20px;
+        margin-right: 0 !important;
+        &-img{
+          width: 40%;
+        }
+        &-info{
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-modal{
+      &__box{
+        flex-direction: column;
+      }
+      &__input{
+        width: 100%;
+      }
+      &__title{
+        width: 100%;
+      }
+      &__agreement{
+        &-label{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 350px) {
+  .team-history__dates-date{
+    min-width: 50px;
+  }
+}

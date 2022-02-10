@@ -36,27 +36,6 @@
 
     &>.owl-dots{
       margin-top: 29px !important;
-      background-color: #A7CDE0;
-      width: 25%;
-      margin: auto;
-      border-radius: 2.5px;
-    }
-    &>.owl-dots>.owl-dot {
-      width: 35%;
-      margin: auto;
-    }
-  }
-}
-
-@media (max-width: 850px) {
-  .partners{
-    &__slider{
-      &>.owl-dots {
-        width: 50%;
-      }
-      &>.owl-dots>.owl-dot {
-        width: 100%;
-      }
     }
   }
 }
