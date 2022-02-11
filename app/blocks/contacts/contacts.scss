@@ -1,0 +1,103 @@
+.contacts{
+  @include adaptiv-marginBottom(193,45);
+  &__title{
+    margin-bottom: 48px;
+  }
+  &__map {
+    @include adaptiv-height(470, 160);
+    margin-bottom: 95px;
+  }
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__offices{
+    width: 30%;
+  }
+  &__info{
+    &-item{
+      margin-bottom: 56px;
+    }
+    &-title{
+      margin-bottom: 28px;
+      font-style: normal;
+      font-weight: 300;
+      @include adaptiv-font(30,15);
+      letter-spacing: 0.03em;
+    }
+    &-block{
+      &_item{
+        margin-bottom: 21px;
+      }
+      &_title{
+        margin-bottom: 3px;
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(16,12);
+        color: #6A6868;
+      }
+      &_text{
+        @include adaptiv-font(16, 12);
+      }
+      &_links{
+        display: flex;
+        flex-direction: column;
+      }
+      &_link{
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(16, 12);
+        color: #292929;
+        border-bottom: 1px solid transparent;
+        width: fit-content;
+        &:hover{
+          border-bottom: 1px solid #292929;
+        }
+      }
+    }
+  }
+
+  &__form>.modal{
+    display: block !important;
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+  }
+  &__form{
+    width: 45%;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .contacts{
+    &__box{
+      align-items: start;
+    }
+    &__offices{
+      width: 40%;
+    }
+    &__form {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts {
+    &__box {
+      align-items: start;
+      flex-direction: column;
+    }
+    &__offices {
+      width: 100%;
+    }
+
+    &__form {
+      width: 100%;
+    }
+  }
+}
