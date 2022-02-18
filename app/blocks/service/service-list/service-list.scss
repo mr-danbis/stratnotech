@@ -1,0 +1,29 @@
+.service {
+  @include adaptiv-paddingBottom(74, 20);
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 45px;
+  }
+}
+
+
+@for $i from 1 through 6 {
+  .service__list>.technologies__link:nth-child(#{$i})>.technologies__top {
+    background-image: url(/images/service/#{$i}.png) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
+.service__list {
+  margin-bottom: 0;
+
+  &>:last-child {
+    display: block;
+  }
+}

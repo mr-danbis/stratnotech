@@ -23,7 +23,8 @@
           <div class="breadcrumbs__wrapper">
             <a class="breadcrumbs__item" href="/">Главная</a>
             <a class="breadcrumbs__item" href="service.html">Услуги</a>
-            <a class="breadcrumbs__item breadcrumbs__item--active" href="servisnoe-obsluzhivanie.html">Сервисное обслуживание</a>
+            <a class="breadcrumbs__item breadcrumbs__item--active" href="servisnoe-obsluzhivanie.html">Сервисное
+              обслуживание</a>
           </div>
         </div>
       </section>
@@ -198,8 +199,18 @@
       @@include('../blocks/partners/partners.html')
       <!-- /.partners -->
 
-      @@include('../blocks/service/service-center.html')
-      <!-- /.service-center -->
+      <section class="service-center">
+        <div class="service-center__wrapper">
+          <div class="container">
+            <h1 class="service-center__title title">Наши сервисные центры</h1>
+          </div>
+          <div class="service-center__map">
+            <script type="text/javascript" charset="utf-8" async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7f5dc243c15e0b747272da63f778c86725c5eb6be4383dab39e0630c5aa6435f&amp;width=100%25&amp;lang=ru_RU&amp;scroll=false">
+            </script>
+          </div>
+        </div>
+      </section>
 
       @@include('../blocks/form/form.html')
       <!-- /.form -->

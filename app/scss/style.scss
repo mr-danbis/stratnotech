@@ -17,6 +17,7 @@
 @import '../blocks/form/form';
 @import '../blocks/modal/modal';
 @import '../blocks/map/map';
+@import '../blocks/partners/partners';
 
 //main page blocks
 @import '../blocks/start/start';
@@ -31,20 +32,17 @@
 //service page blocks
 @import '../blocks/service/service';
 
+//service-list page blocks
+@import '../blocks/service/service-list/service-list';
+
 //technologies page blocks
-@import '../blocks/technologies-list/technologies-list';
+@import '../blocks/technologies/technologies-list/technologies-list';
 
 //industries page blocks
 @import '../blocks/industries-list/industries-list';
 
 //equipment page blocks
 @import '../blocks/equipment/equipment';
-
-//services styles
-@import '../blocks/service/service-info';
-@import '../blocks/service/service-other';
-@import '../blocks/service/service-center';
-@import '../blocks/partners/partners';
 
 //team styles
 @import '../blocks/team/team';

@@ -1,9 +1,0 @@
-.service-center{
-  @include adaptiv-paddingBottom(92,30);
-  &__title{
-    margin-bottom: 30px;
-  }
-  &__map{
-    @include adaptiv-height(650, 160);
-  }
-}
