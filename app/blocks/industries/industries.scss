@@ -66,3 +66,77 @@
     }
   }
 }
+
+.industries-other{
+  @include adaptiv-marginTop(140,45);
+  @include adaptiv-marginBottom(140, 45);
+  &__title{
+    margin-bottom: 51px;
+  }
+
+  &__slider {
+    overflow: hidden;
+
+    &>.owl-dots {
+      margin-top: 73px !important;
+    }
+  }
+
+  a.industries__item{
+    color: #000;
+  }
+}
+
+.industries-installation{
+  &__title{
+    margin-bottom: 28px;
+  }
+}
+
+
+.industries-installation{
+  @include adaptiv-marginBottom(90,40);
+  &__list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiv-gridGap(23,10);
+  }
+  &__item{
+    box-shadow: 0px 10px 20px rgba(142, 140, 140, 0.25);
+  }
+  &__top{
+    @include adaptiv-padding(50, 10);
+    &-img{
+      width: 80%;
+      margin: auto;
+    }
+  }
+  &__bottom{
+    background-color: #EFF6F9;
+    @include adaptiv-padding(29,10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-title{
+      margin-bottom: 15px;
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(24,14);
+      letter-spacing: 0.045em;
+    }
+    &-text{
+      margin-bottom: 12px;
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(14,10);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .industries-installation{
+    &__list{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

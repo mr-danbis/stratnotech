@@ -1,0 +1,45 @@
+.subcategory{
+  margin-bottom: 88px;
+  &__title{
+    margin-bottom: 33px;
+  }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__texts{
+    margin-right: 54px;
+    width: 40%;
+  }
+  &__text:not(:last-child){
+    margin-bottom: 25px;
+  }
+  &__img{
+    width: 50%;
+    position: relative;
+    &-icon{
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 6px;
+      background-color: #fff;
+      @include adaptiv-width(100,40);
+      @include adaptiv-height(100, 40);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .subcategory{
+    &__info{
+      flex-direction: column;
+    }
+    &__texts{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__img{
+      width: 100%;
+    }
+  }
+}

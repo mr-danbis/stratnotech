@@ -51,6 +51,26 @@ $(document).ready(function () {
       },
     }
   });
+
+  $(".industries-other__slider").owlCarousel({
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 10,
+      },
+      450 : {
+        items: 2,
+        margin: 15,
+      },
+      850 : {
+        items: 4,
+        margin: 63,
+      },
+    }
+  });
 });
 
 

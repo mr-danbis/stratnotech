@@ -6,6 +6,7 @@
 @import 'settings/global';
 @import 'settings/slider';
 @import 'settings/breadcrumbs';
+@import 'settings/subcategory';
 
 //common blocks
 @import '../blocks/header/header';
@@ -39,7 +40,7 @@
 @import '../blocks/technologies/technologies-list/technologies-list';
 
 //industries page blocks
-@import '../blocks/industries-list/industries-list';
+@import '../blocks/industries/industries-list/industries-list';
 
 //equipment page blocks
 @import '../blocks/equipment/equipment';
