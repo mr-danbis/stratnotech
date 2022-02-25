@@ -71,6 +71,26 @@ $(document).ready(function () {
       },
     }
   });
+
+  $(".equipment-other__slider").owlCarousel({
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive : {
+      0 : {
+        items: 1,
+        margin: 10,
+      },
+      450 : {
+        items: 2,
+        margin: 15,
+      },
+      850 : {
+        items: 3,
+        margin: 63,
+      },
+    }
+  });
 });
 
 
@@ -247,3 +267,8 @@ $('.equipment__view-btn:nth-child(2)').on('click', function () {
   $('.equipment__item-info>.equipment__item-text').show();
   $('.equipment__item-btn').show();
 });
+
+
+
+const seriesWrapper = document.querySelector('.series');
+const seriesInstallationTitle = seriesWrapper.querySelector('.installation__title').classList.add('hide');

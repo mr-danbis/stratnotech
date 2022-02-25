@@ -16,7 +16,10 @@
   }
   &__img{
     width: 50%;
+    @include adaptiv-height(500,250);
     position: relative;
+    display: flex;
+    justify-content: center;
     &-icon{
       position: absolute;
       top: 0;
@@ -27,6 +30,10 @@
       @include adaptiv-height(100, 40);
     }
   }
+}
+
+.hide{
+  display: none;
 }
 
 @media (max-width: 800px) {
