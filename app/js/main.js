@@ -8,7 +8,7 @@ $(document).ready(function () {
     startPosition: 'URLHash',
   });
 
-  $(".slider").on("changed.owl.carousel", function(event) {
+  $(".slider").on("changed.owl.carousel", function (event) {
     var page = event.page.index;
     $(".slider-logos")
       .children(".slider-logos-link")
@@ -19,14 +19,14 @@ $(document).ready(function () {
 
   $(".partners__slider").owlCarousel({
     responsiveClass: true,
-    responsive : {
-      0 : {
+    responsive: {
+      0: {
         items: 2,
       },
-      450 : {
+      450: {
         items: 3,
       },
-      850 : {
+      850: {
         items: 5,
       },
     }
@@ -36,16 +36,36 @@ $(document).ready(function () {
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
-    responsive : {
-      0 : {
+    responsive: {
+      0: {
         items: 1,
         margin: 10,
       },
-      450 : {
+      450: {
         items: 2,
         margin: 15,
       },
-      850 : {
+      850: {
+        items: 3,
+        margin: 56,
+      },
+    }
+  });
+
+  $(".technologies-other__slider").owlCarousel({
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 10,
+      },
+      450: {
+        items: 2,
+        margin: 15,
+      },
+      850: {
         items: 3,
         margin: 56,
       },
@@ -56,16 +76,16 @@ $(document).ready(function () {
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
-    responsive : {
-      0 : {
+    responsive: {
+      0: {
         items: 1,
         margin: 10,
       },
-      450 : {
+      450: {
         items: 2,
         margin: 15,
       },
-      850 : {
+      850: {
         items: 4,
         margin: 63,
       },
@@ -76,16 +96,16 @@ $(document).ready(function () {
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
-    responsive : {
-      0 : {
+    responsive: {
+      0: {
         items: 1,
         margin: 10,
       },
-      450 : {
+      450: {
         items: 2,
         margin: 15,
       },
-      850 : {
+      850: {
         items: 3,
         margin: 63,
       },
@@ -234,7 +254,7 @@ if (window.location.href !== homePage) {
   $('.map__yandex').css('height', 'calc(260px + 540 * ((100vw - 270px) / 1650))');
 }
 
-if (window.location.href !== homePage  && window.location.href !== homePage + 'team.html') {
+if (window.location.href !== homePage && window.location.href !== homePage + 'team.html') {
   $('.close-button--modal').css('display', 'none');
 }
 
@@ -270,5 +290,37 @@ $('.equipment__view-btn:nth-child(2)').on('click', function () {
 
 
 
-const seriesWrapper = document.querySelector('.series');
-const seriesInstallationTitle = seriesWrapper.querySelector('.installation__title').classList.add('hide');
+// Changing title in different installation blocks
+const wrapper = document.querySelector('.wrapper');
+if (wrapper.classList.contains('series')) {
+  wrapper.querySelector('.installation__title').innerHTML = '';
+}
+if (wrapper.classList.contains('technologies-wrapper')) {
+  wrapper.querySelector('.installation__title').innerHTML = 'Установки технологии';
+}
+
+
+
+
+const varietiesTextBtn = document.querySelectorAll('.readMoreText'),
+      additionalText = document.querySelectorAll('.technologies-varieties__item-additional'),
+      varietiesItem = document.querySelectorAll('.technologies-varieties__item'),
+      varietiesTexts = document.querySelectorAll('.technologies-varieties__item-texts');
+
+let isBtnClicked = false;
+
+varietiesTextBtn.forEach((btn, i) => {
+  btn.addEventListener('click', ()=> {
+    if(isBtnClicked){
+      isBtnClicked = false;
+      additionalText[i].style.display = 'none';
+      btn.innerHTML = 'Читать полностью';
+      varietiesTexts[i].append(btn);
+    } else{
+      isBtnClicked = true;
+      additionalText[i].style.display = 'block';
+      btn.innerHTML = 'Свернуть';
+      varietiesItem[i].append(btn);
+    }
+  });
+});
