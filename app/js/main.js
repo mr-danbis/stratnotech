@@ -111,6 +111,27 @@ $(document).ready(function () {
       },
     }
   });
+
+  $(".about__certificate-slider").owlCarousel({
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 10,
+      },
+      450: {
+        items: 2,
+        margin: 15,
+      },
+      850: {
+        items: 5,
+        margin: 63,
+      },
+    }
+  });
+
 });
 
 
@@ -297,6 +318,9 @@ if (wrapper.classList.contains('series')) {
 }
 if (wrapper.classList.contains('technologies-wrapper')) {
   wrapper.querySelector('.installation__title').innerHTML = 'Установки технологии';
+}
+if (wrapper.classList.contains('about')) {
+    $('.form').css('margin-bottom', '88px');
 }
 
 
