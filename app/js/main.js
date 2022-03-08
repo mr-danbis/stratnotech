@@ -132,6 +132,42 @@ $(document).ready(function () {
     }
   });
 
+  $(".news-other__slider").owlCarousel(
+    {
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 10,
+      },
+      450: {
+        items: 2,
+        margin: 15,
+      },
+      850: {
+        items: 3,
+        margin: 60,
+      },
+    }
+  }
+  );
+
+  $(".news-list__slider").owlCarousel({
+    items: 1,
+    margin: 100
+  });
+
+  if (wrapper.classList.contains('news-slider')) {
+    const newsSlider = document.querySelector('.news-list__slider');
+    const newsSliderDots = newsSlider.querySelectorAll('.owl-dot');
+  
+    newsSliderDots.forEach((dot, i) => {
+      dot.innerHTML = i + 1;
+    });
+  }
+
 });
 
 
@@ -320,27 +356,30 @@ if (wrapper.classList.contains('technologies-wrapper')) {
   wrapper.querySelector('.installation__title').innerHTML = 'Установки технологии';
 }
 if (wrapper.classList.contains('about')) {
-    $('.form').css('margin-bottom', '88px');
+  $('.form').css('margin-bottom', '88px');
+}
+if (wrapper.classList.contains('news')) {
+  $('.form').css('margin-bottom', '40px');
 }
 
 
 
 
 const varietiesTextBtn = document.querySelectorAll('.readMoreText'),
-      additionalText = document.querySelectorAll('.technologies-varieties__item-additional'),
-      varietiesItem = document.querySelectorAll('.technologies-varieties__item'),
-      varietiesTexts = document.querySelectorAll('.technologies-varieties__item-texts');
+  additionalText = document.querySelectorAll('.technologies-varieties__item-additional'),
+  varietiesItem = document.querySelectorAll('.technologies-varieties__item'),
+  varietiesTexts = document.querySelectorAll('.technologies-varieties__item-texts');
 
 let isBtnClicked = false;
 
 varietiesTextBtn.forEach((btn, i) => {
-  btn.addEventListener('click', ()=> {
-    if(isBtnClicked){
+  btn.addEventListener('click', () => {
+    if (isBtnClicked) {
       isBtnClicked = false;
       additionalText[i].style.display = 'none';
       btn.innerHTML = 'Читать полностью';
       varietiesTexts[i].append(btn);
-    } else{
+    } else {
       isBtnClicked = true;
       additionalText[i].style.display = 'block';
       btn.innerHTML = 'Свернуть';

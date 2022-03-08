@@ -261,7 +261,7 @@
   }
 }
 
-.about__categories{
+.categories-block{
   @include adaptiv-marginBottom(88, 30);
   &-inner{
     display: flex;
@@ -272,7 +272,7 @@
     background: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(142, 140, 140, 0.25);
     padding: 27px 19px;
-    &:hover .about__categories-title>.about__team-column_line{
+    &:hover .categories-block-title>.about__team-column_line{
       animation-name: moveRight;
       animation-duration: .5s;
       animation-fill-mode: forwards;
@@ -295,7 +295,7 @@
   }
 }
 
-.about__contact{
+.contact-text{
   @include adaptiv-marginBottom(54,20);
   &-title{
     margin-bottom: 18px;
@@ -358,7 +358,7 @@
     }
   }
   
-  .about__categories{
+  .categories-block{
     &-inner{
       flex-direction: column;
     }

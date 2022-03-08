@@ -124,6 +124,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   @include adaptiv-font(18,14);
   color: $orange;
   border-bottom: 1px solid transparent;
+  width: fit-content;
   &:hover{
     color: #FF5F23;
     border-bottom: 1px solid #FF5F23;
