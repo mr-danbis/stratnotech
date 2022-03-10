@@ -87,42 +87,6 @@
   &__title{
     margin-bottom: 38px;
   }
-  &__navigation{
-    @include adaptiv-marginBottom(88,30);
-    display: flex;
-    &-item{
-      background-color: #A09F9F;
-      padding: 9px 11px;
-      &:not(:last-child){
-        margin-right: 14px;
-      }
-      &--active{
-        background-color: #FF4500;
-      }
-    }
-    &-title{
-      font-style: normal;
-      font-weight: normal;
-      @include adaptiv-font(16,12);
-      letter-spacing: 0.03em;
-      color: #FFFFFF;
-    }
-  }
-  &__slider{
-    overflow: hidden;
-    @include adaptiv-marginBottom(88, 25);
-    &>.owl-dots>.owl-dot{
-      @include adaptiv-width(39,20);
-      @include adaptiv-height(39,20);
-      background-color: #A09F9F;
-      color: #FFFFFF;
-      border-radius: 0;
-      @include adaptiv-font(18,12);
-    }
-    &>.owl-dots>.owl-dot.active {
-      background-color: #FF4500;
-    }
-  }
   &__content{
     margin-right: 10px;
     margin-left: 10px;
@@ -172,50 +136,6 @@
     }
   }
 }
-
-
-.news-info{
-  @include adaptiv-marginBottom(130,30);
-  &__top{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  &__title{
-    margin-bottom: 20px;
-  }
-  &__text{
-    &:not(:last-child){
-      margin-bottom: 25px;
-    }
-  }
-  &__left{
-    width: 45%;
-  }
-  &__right{
-    width: 50%;
-  }
-  &__bottom{
-    margin-bottom: 30px;
-  }
-  &__gallery{
-    &-inner{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 18px;
-    }
-    &-item{
-      width: 30%;
-    }
-    &-text{
-      font-style: normal;
-      font-weight: normal;
-      @include adaptiv-font(14,11);
-      color: #292929;
-    }
-  }
-}
-
 
 .news-other{
   @include adaptiv-marginBottom(88,20);
@@ -267,22 +187,6 @@
       &-info{
         height: 60%;
       }
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .news-info{
-    &__top{
-      flex-direction: column;
-    }
-    &__right{
-      order: 0;
-      margin-bottom: 20px;
-    }
-    &__left {
-      order: 1;
-      width: 100%;
     }
   }
 }
@@ -339,21 +243,6 @@
     &__content {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(9,40vh);
-    }
-  }
-
-  .news-info{
-    &__right{
-      width: 100%;
-    }
-    &__gallery{
-      &-inner{
-        flex-direction: column;
-      }
-      &-item{
-        width: 100%;
-        margin-bottom: 20px;
-      }
     }
   }
 

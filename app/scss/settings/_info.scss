@@ -1,0 +1,142 @@
+.info {
+  @include adaptiv-marginBottom(130, 30);
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__left {
+    width: 45%;
+  }
+
+  &__right {
+    width: 50%;
+  }
+
+  &__bottom {
+    margin-bottom: 30px;
+  }
+
+  &__gallery {
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    &-item {
+      width: 30%;
+    }
+
+    &-text {
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(14, 11);
+      color: #292929;
+    }
+  }
+
+  &__author{
+    display: flex;
+    align-items: center;
+    &-img{
+      margin-right: 31px;
+      @include adaptiv-height(114, 50);
+      @include adaptiv-width(114, 50);
+    }
+    &-inf{
+      margin-right: 20%;
+    }
+    &-name{
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      @include adaptiv-font(16,12);
+    }
+    &-position{
+      font-style: normal;
+      font-weight: 300;
+      @include adaptiv-font(16, 12);
+    }
+  }
+}
+
+
+@media (max-width: 900px) {
+  .info {
+    &__top {
+      flex-direction: column;
+    }
+
+    &__right {
+      order: 0;
+      margin-bottom: 20px;
+    }
+
+    &__left {
+      order: 1;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .info{
+    &__author{
+      &-inf{
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .info {
+    &__author {
+     flex-direction: column;
+     &-img{
+       margin-right: 0;
+       margin-bottom: 20px;
+     }
+     &-inf {
+       margin-right: 0;
+       margin-bottom: 20px;
+     }
+     &-name,
+     &-position{
+       text-align: center;
+     }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .info {
+    &__right {
+      width: 100%;
+    }
+
+    &__gallery {
+      &-inner {
+        flex-direction: column;
+      }
+
+      &-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

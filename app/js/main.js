@@ -19,6 +19,8 @@ $(document).ready(function () {
 
   $(".partners__slider").owlCarousel({
     responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 2,
@@ -47,7 +49,7 @@ $(document).ready(function () {
       },
       850: {
         items: 3,
-        margin: 56,
+        margin: 60,
       },
     }
   });
@@ -67,7 +69,7 @@ $(document).ready(function () {
       },
       850: {
         items: 3,
-        margin: 56,
+        margin: 60,
       },
     }
   });
@@ -87,7 +89,7 @@ $(document).ready(function () {
       },
       850: {
         items: 4,
-        margin: 63,
+        margin: 60,
       },
     }
   });
@@ -107,7 +109,7 @@ $(document).ready(function () {
       },
       850: {
         items: 3,
-        margin: 63,
+        margin: 60,
       },
     }
   });
@@ -127,13 +129,12 @@ $(document).ready(function () {
       },
       850: {
         items: 5,
-        margin: 63,
+        margin: 60,
       },
     }
   });
 
-  $(".news-other__slider").owlCarousel(
-    {
+  $(".news-other__slider").owlCarousel({
     responsiveClass: true,
     autoplay: true,
     autoplayHoverPause: true,
@@ -151,22 +152,23 @@ $(document).ready(function () {
         margin: 60,
       },
     }
-  }
-  );
+  });
 
-  $(".news-list__slider").owlCarousel({
+
+
+  $(".slider-number").owlCarousel({
     items: 1,
     margin: 100
   });
-
-  if (wrapper.classList.contains('news-slider')) {
-    const newsSlider = document.querySelector('.news-list__slider');
+  if (wrapper.classList.contains('sliderNumber')) {
+    const newsSlider = document.querySelector('.slider-number');
     const newsSliderDots = newsSlider.querySelectorAll('.owl-dot');
-  
+
     newsSliderDots.forEach((dot, i) => {
       dot.innerHTML = i + 1;
     });
   }
+
 
 });
 
@@ -358,12 +360,13 @@ if (wrapper.classList.contains('technologies-wrapper')) {
 if (wrapper.classList.contains('about')) {
   $('.form').css('margin-bottom', '88px');
 }
-if (wrapper.classList.contains('news')) {
+if (wrapper.classList.contains('news') || wrapper.classList.contains('blog')) {
   $('.form').css('margin-bottom', '40px');
 }
 
-
-
+if (wrapper.classList.contains('article')) {
+  wrapper.querySelector('.blog-block__title').innerHTML = 'Другие публикации блога';
+}
 
 const varietiesTextBtn = document.querySelectorAll('.readMoreText'),
   additionalText = document.querySelectorAll('.technologies-varieties__item-additional'),
@@ -377,13 +380,14 @@ varietiesTextBtn.forEach((btn, i) => {
     if (isBtnClicked) {
       isBtnClicked = false;
       additionalText[i].style.display = 'none';
-      btn.innerHTML = 'Читать полностью';
+      btn.textContent = 'Читать полностью';
       varietiesTexts[i].append(btn);
     } else {
       isBtnClicked = true;
       additionalText[i].style.display = 'block';
-      btn.innerHTML = 'Свернуть';
+      btn.textContent = 'Свернуть';
       varietiesItem[i].append(btn);
     }
   });
 });
+

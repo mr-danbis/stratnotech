@@ -121,7 +121,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 
 .link-all{
   font-weight: normal;
-  @include adaptiv-font(18,14);
+  @include adaptiv-font(16,12);
   color: $orange;
   border-bottom: 1px solid transparent;
   width: fit-content;
@@ -133,7 +133,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 
 .read-all{
   font-weight: normal;
-  font-size: 14px;
+  @include adaptiv-font(14, 11);
   letter-spacing: 0.015em;
   color: $orange;
   padding: 12px 14px;
