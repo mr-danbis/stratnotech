@@ -182,7 +182,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
 
 .text{
   font-weight: 400;
-  @include adaptiv-font(16, 13);
+  @include adaptiv-font(16, 12);
 }
 
 .close-button {
