@@ -1,0 +1,34 @@
+<div class="reviews-modal modal__hidden">
+  <div class="reviews-modal__container">
+    <button class="reviews-modal__close-btn">
+      <img class="reviews-modal__close-img" src="/images/icons/close.svg" alt="Button: close">
+    </button>
+    <h1 class="reviews-modal__title">
+      Написать отзыв
+    </h1>
+    <form class="reviews-modal__form" reviews-modal="post" action="send.php">
+      <input class="reviews-modal__input" type="text" placeholder="*ФИО" required>
+      <input class="reviews-modal__input" type="mail" placeholder="*E-mail" required>
+      <input class="reviews-modal__input" type="text" placeholder="Компания">
+      <input class="reviews-modal__input" type="text" placeholder="Должность">
+      <textarea class="reviews-modal__textarea" placeholder="*Отзыв" required></textarea>
+      <div class="reviews-modal__stars">
+        <div class="reviews-modal__stars-block">
+          <img class="reviews-modal__stars-img" src="/images/icons/stars.svg" alt="Stars icon">
+          <img class="reviews-modal__stars-img" src="/images/icons/stars.svg" alt="Stars icon">
+          <img class="reviews-modal__stars-img" src="/images/icons/stars.svg" alt="Stars icon">
+          <img class="reviews-modal__stars-img" src="/images/icons/stars.svg" alt="Stars icon">
+          <img class="reviews-modal__stars-img" src="/images/icons/stars.svg" alt="Stars icon">
+        </div>
+        <h4 class="reviews-modal__stars-text">Оценка</h4>
+      </div>
+      <div class="reviews-modal__agreement">
+        <input class="reviews-modal__agreement-checkbox" type="checkbox" id="agreement-reviews">
+        <label class="reviews-modal__agreement-label" for="agreement-reviews">
+          Нажимая на кнопку вы соглашаетесь на обработку персональных данных
+        </label>
+      </div>
+      <button class="reviews-modal__button btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>

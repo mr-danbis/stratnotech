@@ -73,9 +73,191 @@
   }
 }
 
+.reviews-modal{
+  width: 55%;
+  background: #FFFFFF;
+  border: 1px solid #6A6868;
+  box-sizing: border-box;
+  box-shadow: 0px 60px 80px rgba(142, 140, 140, 0.25);
+  padding-top: 35px;
+  padding-bottom: 35px;
+  position: fixed;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  &__title{
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(20,13);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #6A6868;
+    margin-bottom: 30px;
+  }
+  &__close{
+    &-btn{
+      position: absolute;
+      top: 5%;
+      right: 13%;
+    }
+  }
+  &__container{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__input{
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+    @include adaptiv-paddingTop(15, 7);
+    @include adaptiv-paddingBottom(15, 7);
+    @include adaptiv-paddingLeft(31, 15);
+    @include adaptiv-paddingRight(31, 15);
+    border: 1px solid #6A6868;
+    @include adaptiv-font(16, 10);
+  }
+  &__textarea{
+    @include adaptiv-font(16, 10);
+    width: 100%;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    margin-bottom: 15px;
+    height: 15vh;
+    @include adaptiv-paddingTop(15, 7);
+    @include adaptiv-paddingBottom(15, 7);
+    @include adaptiv-paddingLeft(31, 15);
+    @include adaptiv-paddingRight(31, 15);
+    border: 1px solid #6A6868;
+  }
+  &__stars{
+    margin-bottom: 22px;
+    display: flex;
+    width: 100%;
+    &-block{
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+    }
+    &-img{
+      filter: grayscale(100%);
+      &:not(:last-child){
+        margin-right: 6px;
+      }
+    }
+    &-text{
+      font-style: normal;
+      font-weight: 300;
+      @include adaptiv-font(14,10);
+      letter-spacing: 0.015em;
+      color: #6A6868;
+    }
+  }
+  &__agreement{
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    &-label {
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(14, 10);
+    }
+    &-checkbox {
+      margin-right: 17px !important;
+      margin: 0;
+      width: 23px;
+      height: 23px;
+      border-radius: 3px;
+    }
+    &-checkbox[type="checkbox"]:checked,
+    &-checkbox[type="checkbox"]:not(:checked) {
+      position: absolute;
+      left: -9999px;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label,
+    &-checkbox[type="checkbox"]:not(:checked)+label {
+      display: inline-block;
+      position: relative;
+      padding-left: 45px;
+      cursor: pointer;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:before,
+    &-checkbox[type="checkbox"]:not(:checked)+label:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 23px;
+      height: 23px;
+      border: 1px solid #dddddd;
+      background-color: #ffffff;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:before,
+    &-checkbox[type="checkbox"]:not(:checked)+label:before {
+      border-radius: 2px;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after,
+    &-checkbox[type="checkbox"]:not(:checked)+label:after {
+      content: "";
+      position: absolute;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after,
+    &-checkbox[type="checkbox"]:not(:checked)+label:after {
+      left: 4px;
+      top: 6px;
+      width: 16px;
+      height: 7px;
+      border-radius: 1px;
+      border-left: 2px solid #FF4500;
+      border-bottom: 2px solid #FF4500;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+
+    &-checkbox[type="checkbox"]:not(:checked)+label:after {
+      opacity: 0;
+    }
+
+    &-checkbox[type="checkbox"]:checked+label:after {
+      opacity: 1;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .reviews-list__item-stars{
     justify-content: start !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-modal{
+    width: 90%;
   }
 }
 

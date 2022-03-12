@@ -228,8 +228,8 @@ $('.close-button--modal').on('click', function () {
   $(".modal").addClass("modal__hidden");
 });
 
-// var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-var homePage = 'http://localhost:3000/';
+var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+// var homePage = 'http://localhost:3000/';
 
 
 // Active page
@@ -391,3 +391,24 @@ varietiesTextBtn.forEach((btn, i) => {
   });
 });
 
+const reviewsBtnOpen = document.querySelector('.reviews-list__btn');
+const modalReviews = document.querySelector('.reviews-modal');
+const reviewsBtnClose = document.querySelector('.reviews-modal__close-btn');
+reviewsBtnOpen.addEventListener('click', ()=> {
+  modalReviews.classList.remove('modal__hidden');
+  modalReviews.classList.add('modal__visible');
+});
+
+reviewsBtnClose.addEventListener('click', ()=> {
+  modalReviews.classList.remove('modal__visible');
+  modalReviews.classList.add('modal__hidden');
+});
+
+$(document).mouseup(function (e) { // событие клика по веб-документу
+  var div = $(".reviews-modal"); // тут указываем ID элемента
+  if (!div.is(e.target) // если клик был не по нашему блоку
+    &&
+    div.has(e.target).length === 0) { // и не по его дочерним элементам
+    $(".reviews-modal").addClass("modal__hidden");
+  }
+});
