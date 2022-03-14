@@ -155,6 +155,27 @@ $(document).ready(function () {
   });
 
 
+  $(".installation-other__slider").owlCarousel({
+    responsiveClass: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 10,
+      },
+      450: {
+        items: 2,
+        margin: 15,
+      },
+      850: {
+        items: 3,
+        margin: 60,
+      },
+    }
+  });
+
+
 
   $(".slider-number").owlCarousel({
     items: 1,
@@ -360,7 +381,7 @@ if (wrapper.classList.contains('technologies-wrapper')) {
 if (wrapper.classList.contains('about')) {
   $('.form').css('margin-bottom', '88px');
 }
-if (wrapper.classList.contains('news') || wrapper.classList.contains('blog')) {
+if (wrapper.classList.contains('news') || wrapper.classList.contains('blog') || wrapper.classList.contains('installation-page')) {
   $('.form').css('margin-bottom', '40px');
 }
 
@@ -368,7 +389,7 @@ if (wrapper.classList.contains('article')) {
   wrapper.querySelector('.blog-block__title').innerHTML = 'Другие публикации блога';
 }
 
-if (wrapper.classList.contains('installation')) {
+if (wrapper.classList.contains('installation-page')) {
   wrapper.querySelector('.contact-text-title').innerHTML = 'Заинтересовала установка? Свяжитесь с нами';
   wrapper.querySelector('.contact-text-text').hidden = true;
 }

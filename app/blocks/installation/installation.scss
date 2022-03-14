@@ -48,6 +48,24 @@
   }
 }
 
+
+.installation-other{
+  @include adaptiv-marginBottom(140,40);
+  &__title{
+    margin-bottom: 50px;
+  }
+  &__slider {
+    overflow: hidden;
+    .installation__item{
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+  & .owl-dots {
+    margin-top: 50px;
+  }
+}
+
 @media (max-width: 700px) {
   .installation {
     &__list {
