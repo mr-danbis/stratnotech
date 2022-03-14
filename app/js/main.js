@@ -228,8 +228,8 @@ $('.close-button--modal').on('click', function () {
   $(".modal").addClass("modal__hidden");
 });
 
-var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-// var homePage = 'http://localhost:3000/';
+// var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+var homePage = 'http://localhost:3000/';
 
 
 // Active page
