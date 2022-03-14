@@ -20,10 +20,6 @@
     position: relative;
     display: flex;
     justify-content: center;
-    // &-main{
-    //   width: 100%;
-    //   object-fit: cover;
-    // }
     &-icon{
       position: absolute;
       top: 0;
@@ -32,6 +28,18 @@
       background-color: #fff;
       @include adaptiv-width(100,40);
       @include adaptiv-height(100, 40);
+    }
+  }
+  &__link{
+    position: relative;
+    &::after{
+      position: absolute;
+      top: 4px;
+      right: -20px;
+      content: "";
+      background-image: url('/images/icons/download.svg');
+      width: 9px;
+      height: 14px;
     }
   }
 }

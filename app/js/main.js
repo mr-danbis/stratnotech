@@ -228,8 +228,8 @@ $('.close-button--modal').on('click', function () {
   $(".modal").addClass("modal__hidden");
 });
 
-// var homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-var homePage = 'http://localhost:3000/';
+// const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+const homePage = 'http://localhost:3000/';
 
 
 // Active page
@@ -366,6 +366,11 @@ if (wrapper.classList.contains('news') || wrapper.classList.contains('blog')) {
 
 if (wrapper.classList.contains('article')) {
   wrapper.querySelector('.blog-block__title').innerHTML = 'Другие публикации блога';
+}
+
+if (wrapper.classList.contains('installation')) {
+  wrapper.querySelector('.contact-text-title').innerHTML = 'Заинтересовала установка? Свяжитесь с нами';
+  wrapper.querySelector('.contact-text-text').hidden = true;
 }
 
 const varietiesTextBtn = document.querySelectorAll('.readMoreText'),
