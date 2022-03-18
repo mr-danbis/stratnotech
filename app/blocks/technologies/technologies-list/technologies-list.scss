@@ -6,11 +6,14 @@
       background-size: cover;
     }
   }
+
+  
   &__text{
     font-style: normal;
     font-weight: normal;
     @include adaptiv-font(16,12);
     margin-bottom: 14px;
+    line-height: 182.18%;
   }
   &__top{
     &-title{
@@ -19,6 +22,10 @@
         margin-bottom: 20px;
       }
     }
+  }
+  &__bottom{
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -29,6 +36,9 @@
   }
   &__list {
     @include adaptiv-gridGap(55, 30);
+  }
+  &__wrapper {
+    position: relative;
   }
   &__list>.technologies__item:last-child>.technologies__top>.technologies__top-title {
     right: 19px;
@@ -52,6 +62,29 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+}
+
+
+
+.list-row{
+  & .technologies__item{
+    display: flex;
+    align-items: center;
+  }
+  & .technologies__top {
+    margin-bottom: 0;
+    width: 30%;
+  }
+  & .technologies__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+  }
+  & .technologies__text {
+    width: 85%;
+    margin: auto;
   }
 }
 
@@ -80,10 +113,40 @@
   .technologies-list__list>.technologies__item:last-child>.technologies__top>.technologies__top-title{
     padding: 10px;
   }
+
+  .list-row {
+    & .technologies__item {
+      align-items: start;
+    }
+    & .technologies__bottom {
+      flex-direction: column;
+    }
+    & .technologies__text {
+      margin-bottom: 15px;
+    }
+    & .technologies__top-title{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    & .technologies__top-title_line{
+      margin-top: 10px;
+      margin-left: 0;
+    }
+    & .technologies__top-title_text{
+      margin-bottom: 0;
+    }
+  }
 }
 
 @media (max-width: 800px) {
   .technologies {
+    &-list{
+      &__list{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
     &__top {
       &-title {
         &_question {
@@ -93,7 +156,33 @@
       }
     }
   }
+  .list-row {
+    & .technologies__top {
+      height: 20vh;
+    }
+    & .technologies__top-title {
+      left: 10px;
+      right: 10px;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
 }
+
+
+@media (max-width: 600px) {
+  .list-row {
+    & .technologies__top {
+      height: 20vh;
+      width: 50%;
+    }
+    & .technologies__bottom {
+      width: 60%;
+    }
+  }
+}
+
+
 
 @media (max-width: 500px) {
   .technologies-list {
@@ -112,6 +201,17 @@
           width: 5%;
           margin-bottom: 10px;
         }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 450px) {
+  .technologies {
+    &-list {
+      &__list {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }

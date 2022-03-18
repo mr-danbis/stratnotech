@@ -5,3 +5,54 @@
     }
   }
 }
+
+.list-row{
+  & .industries__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  & .industries-list__item-text{
+    margin-bottom: 0;
+    text-align: left;
+  }
+  & .industries__item-icon{
+    margin-bottom: 0;
+  }
+  & .industries__item-title{
+    height: auto;
+    text-align: left;
+  }
+  & .industries__item-box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .list-row {
+    & .industries__item-group {
+      width: 65%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .list-row {
+    & .industries__item-box {
+      flex-direction: column;
+      align-items: start;
+      width: 70%;
+    }
+    & .industries__item-group {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}

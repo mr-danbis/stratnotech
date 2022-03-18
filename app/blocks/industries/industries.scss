@@ -1,5 +1,8 @@
 .industries{
   @include adaptiv-paddingBottom(182, 60);
+  &__wrapper{
+    position: relative;
+  }
   &__title{
     margin-bottom: 62px;
   }
@@ -15,14 +18,14 @@
     }
     &-title{
       font-weight: normal;
-      font-size: 18px;
+      @include adaptiv-font(18,13);
       letter-spacing: 0.045em;
       margin-bottom: 6px;
       height: 50px;
     }
     &-text{
       font-weight: normal;
-      font-size: 14px;
+      @include adaptiv-font(14,11);
     }
   }
 }
@@ -62,6 +65,11 @@
       }
       &-text{
         text-align: center;
+      }
+      &-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
   }

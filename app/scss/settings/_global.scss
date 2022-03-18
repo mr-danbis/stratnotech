@@ -125,6 +125,7 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   color: $orange;
   border-bottom: 1px solid transparent;
   width: fit-content;
+  height: fit-content;
   &:hover{
     color: #FF5F23;
     border-bottom: 1px solid #FF5F23;
@@ -309,14 +310,58 @@ textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s 
   opacity: 1;
 }
 
+
+
+.list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include adaptiv-gridColGap(21, 8);
+  @include adaptiv-gridRowGap(21, 8);
+  &-row{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+
+.view {
+  position: absolute;
+  right: 0;
+  top: 0;
+  &-btn {
+    &:first-child {
+      margin-right: 6px;
+    }
+
+    &:last-child {
+      filter: grayscale(1);
+    }
+  }
+}
+
+
+
 @media (max-width: 1600px) {
   .container {
     width: 90%;
   }
 }
 
+@media (max-width: 650px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 450px) {
   .title {
     text-align: center;
+  }
+
+  .view {
+    position: static;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: end;
   }
 }
