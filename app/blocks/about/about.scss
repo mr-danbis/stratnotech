@@ -130,61 +130,57 @@
       }
     }
   }
+}
 
+.about__team {
+  @include adaptiv-marginBottom(90, 40);
+  padding-top: 67px;
+  padding-bottom: 30px;
+  background-image: url(/images/about/team.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
 
+  &-title {
+    text-align: center;
+    @include adaptiv-marginBottom(79, 40);
+  }
 
+  &-info {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  .about__team {
-    @include adaptiv-marginBottom(90, 40);
-    padding-top: 67px;
-    padding-bottom: 30px;
-    background-image: url(/images/about/team.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #FFFFFF;
-
-    &-title {
-      text-align: center;
-      @include adaptiv-marginBottom(79, 40);
-    }
-
-    &-info {
+  &-column {
+    width: 40%;
+    &_title {
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(30,15);
+      letter-spacing: 0.03em;
+      @include adaptiv-marginBottom(19,10);
       display: flex;
-      justify-content: space-between;
+      align-items: center;
     }
-
-    &-column {
-      width: 40%;
-      &_title {
-        font-style: normal;
-        font-weight: normal;
-        @include adaptiv-font(30,15);
-        letter-spacing: 0.03em;
-        @include adaptiv-marginBottom(19,10);
-        display: flex;
-        align-items: center;
-      }
-      &_text:nth-child(3){
-        font-weight: bold;
-        margin-top: 20px;
-      }
-      &_text{
-        font-style: normal;
-        font-weight: normal;
-        @include adaptiv-font(16,12);
-        line-height: 182.18%;
-      }
-      &_line{
-        margin-left: 20px;
-        width: 36px;
-        height: 2px;
-        background-color: #FF4500;
-      }
+    &_text:nth-child(3){
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    &_text{
+      font-style: normal;
+      font-weight: normal;
+      @include adaptiv-font(16,12);
+      line-height: 182.18%;
+    }
+    &_line{
+      margin-left: 20px;
+      width: 36px;
+      height: 2px;
+      background-color: #FF4500;
     }
   }
 }
-
 
 .about__advantages{
   @include adaptiv-marginBottom(80,40);

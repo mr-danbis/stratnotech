@@ -1,367 +1,414 @@
 html,
 body {
-  overflow-x: hidden;
-  height: 100%;
-  color: $textColor;
-  font-family: 'Open Sans', sans-serif;
-  scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+    color: $textColor;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 
 input::-webkit-input-placeholder {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 input::-moz-placeholder {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 input:-moz-placeholder {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 input:-ms-input-placeholder {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 input:focus::-webkit-input-placeholder {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 input:focus::-moz-placeholder {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 input:focus:-moz-placeholder {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 input:focus:-ms-input-placeholder {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
-textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
-textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
-textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
-textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
-textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
-textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
-textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+textarea::-webkit-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+textarea::-moz-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+textarea:-moz-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+textarea:-ms-input-placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+textarea:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+textarea:focus::-moz-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+textarea:focus:-moz-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+textarea:focus:-ms-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
 
 .box {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  &__content{
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
     position: relative;
-    z-index: 2;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-  }
-  &__video{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-  }
-}
 
-.box-pages{
-   background-image: url(/images/service-bg.png);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+    &__content {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__video {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+    }
+
+    &-pages {
+        background-color: #000;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    &-blur>.main>*:not(.modal) {
+        filter: blur(3px);
+    }
+    &-blur>.box,
+    &-blur>.footer,
+    &-blur>.bottom,
+    &-blur>.box-pages {
+        filter: blur(3px);
+    }
 }
 
-.active-link{
-  border-bottom: 2px solid #FF5F23 !important;
+.active-link {
+    border-bottom: 2px solid #FF5F23 !important;
 }
 
 .main {
-  background-color:#fff;
-  z-index: 5;
-  flex: 1 0 auto;
-  position: relative;
+    background-color: #fff;
+    z-index: 5;
+    flex: 1 0 auto;
+    position: relative;
 }
 
 .footer {
-  flex: 0 0 auto;
-  z-index: 0;
+    flex: 0 0 auto;
+    z-index: 0;
 }
 
 .container {
-  width: 71%;
-  margin: 0 auto;
+    width: 71%;
+    margin: 0 auto;
 }
 
 #more {
-  display: none;
+    display: none;
 }
 
-.link-all{
-  font-weight: normal;
-  @include adaptiv-font(16,12);
-  color: $orange;
-  border-bottom: 1px solid transparent;
-  width: fit-content;
-  height: fit-content;
-  &:hover{
-    color: #FF5F23;
-    border-bottom: 1px solid #FF5F23;
-  }
+.link-all {
+    font-weight: normal;
+    @include adaptiv-font(16, 12);
+    color: $orange;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+    height: fit-content;
+
+    &:hover {
+        color: #FF5F23;
+        border-bottom: 1px solid #FF5F23;
+    }
 }
 
-.read-all{
-  font-weight: normal;
-  @include adaptiv-font(14, 11);
-  letter-spacing: 0.015em;
-  color: $orange;
-  padding: 12px 14px;
-  border: 1px solid $orange;
-  border-radius: 5px;
-  margin-right: 1px;
-  &:hover{
+.read-all {
+    font-weight: normal;
+    @include adaptiv-font(14, 11);
+    letter-spacing: 0.015em;
+    color: $orange;
+    padding: 12px 14px;
+    border: 1px solid $orange;
+    border-radius: 5px;
+    margin-right: 1px;
+
+    &:hover {
+        background-color: $orange;
+        color: #fff;
+        transition: all .3s;
+    }
+}
+
+.btn {
+    display: inline-block;
     background-color: $orange;
-    color: #fff;
-    transition: all .3s;
-  }
+    border-radius: 5px;
+    @include adaptiv-font(18, 11);
+    color: #FFFFFF;
+    @include adaptiv-paddingTop(18, 8);
+    @include adaptiv-paddingBottom(18, 8);
+    @include adaptiv-paddingLeft(30, 8);
+    @include adaptiv-paddingRight(30, 8);
+
+    &:hover {
+        background-color: #FF5F23;
+        color: #DADADA;
+        transition: all 0.3s;
+    }
 }
 
-.btn{
-  display: inline-block;
-  background-color: $orange;
-  border-radius: 5px;
-  @include adaptiv-font(18,11);
-  color: #FFFFFF;
-  @include adaptiv-paddingTop(18, 8);
-  @include adaptiv-paddingBottom(18, 8);
-  @include adaptiv-paddingLeft(30, 8);
-  @include adaptiv-paddingRight(30, 8);
-  &:hover{
-    background-color: #FF5F23;
-    color: #DADADA;
-    transition: all 0.3s;
-  }
-}
-
-.title{
-  @include adaptiv-font(40,25);
-  font-weight: 300;
-  letter-spacing: 0.03em;
+.title {
+    @include adaptiv-font(40, 25);
+    font-weight: 300;
+    letter-spacing: 0.03em;
 
 }
 
-.pages-title{
-  font-style: normal;
-  font-weight: normal;
-  @include adaptiv-font(40,25);
-  color: #FFFFFF;
-  @include adaptiv-marginBottom(98,30);
-  @include adaptiv-marginTop(96, 30);
+.pages-title {
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(40, 25);
+    color: #FFFFFF;
+    @include adaptiv-marginBottom(98, 30);
+    @include adaptiv-marginTop(96, 30);
 }
 
-.text{
-  font-weight: 400;
-  @include adaptiv-font(16, 12);
+.text {
+    font-weight: 400;
+    @include adaptiv-font(16, 12);
 }
 
 .close-button {
-  display: flex;
-  justify-content: center;
-  height: 20%;
+    display: flex;
+    justify-content: center;
+    height: 20%;
 }
 
 .close-button div {
-  cursor: pointer;
-  position: relative;
-  height: 68px;
-  width: 50px;
+    cursor: pointer;
+    position: relative;
+    height: 68px;
+    width: 50px;
 }
 
 .close-button .leftright {
-  height: 4px;
-  width: 50px;
-  position: absolute;
-  margin-top: 24px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  transition: all .3s ease-in;
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
 }
 
 .close-button .rightleft {
-  height: 4px;
-  width: 50px;
-  position: absolute;
-  margin-top: 24px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(-45deg);
-  transition: all .3s ease-in;
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
 }
 
 .close-button .close-btn {
-  margin: 54px 0 0 -5px;
-  position: absolute;
-  color: #fff;
-  font-family: Tahoma, sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all .3s ease-in;
-  opacity: 0;
+    margin: 54px 0 0 -5px;
+    position: absolute;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+    opacity: 0;
 }
 
 .close-button div:hover .leftright {
-  transform: rotate(-45deg);
-  background-color: #fff;
+    transform: rotate(-45deg);
+    background-color: #fff;
 }
 
 .close-button div:hover .rightleft {
-  transform: rotate(45deg);
-  background-color: #fff;
+    transform: rotate(45deg);
+    background-color: #fff;
 }
 
 .close-button div:hover .close-btn {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 .close-button--modal {
-  margin-bottom: 15px;
-  justify-content: end;
-  display: flex;
-  height: 20%;
+    margin-bottom: 15px;
+    justify-content: end;
+    display: flex;
+    height: 20%;
 }
 
 .close-button--modal div {
-  cursor: pointer;
-  position: relative;
-  height: 68px;
-  width: 50px;
+    cursor: pointer;
+    position: relative;
+    height: 68px;
+    width: 50px;
 }
 
 .close-button--modal .leftright {
-  height: 4px;
-  width: 50px;
-  position: absolute;
-  margin-top: 24px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  transition: all .3s ease-in;
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
 }
 
 .close-button--modal .rightleft {
-  height: 4px;
-  width: 50px;
-  position: absolute;
-  margin-top: 24px;
-  background-color: #fff;
-  border-radius: 2px;
-  transform: rotate(-45deg);
-  transition: all .3s ease-in;
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
 }
 
 .close-button--modal .close-btn {
-  margin: 54px 0 0 -5px;
-  position: absolute;
-  color: #fff;
-  font-family: Tahoma, sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all .3s ease-in;
-  opacity: 0;
+    margin: 54px 0 0 -5px;
+    position: absolute;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+    opacity: 0;
 }
 
 .close-button--modal div:hover .leftright {
-  transform: rotate(-45deg);
-  background-color: #fff;
+    transform: rotate(-45deg);
+    background-color: #fff;
 }
 
 .close-button--modal div:hover .rightleft {
-  transform: rotate(45deg);
-  background-color: #fff;
+    transform: rotate(45deg);
+    background-color: #fff;
 }
 
 .close-button--modal div:hover .close-btn {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 
-.list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  @include adaptiv-gridColGap(21, 8);
-  @include adaptiv-gridRowGap(21, 8);
-  &-row{
-    display: flex !important;
-    flex-direction: column !important;
-  }
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiv-gridColGap(21, 8);
+    @include adaptiv-gridRowGap(21, 8);
+
+    &-row {
+        display: flex !important;
+        flex-direction: column !important;
+    }
 }
 
 
 .view {
-  position: absolute;
-  right: 0;
-  top: 0;
-  &-btn {
-    &:first-child {
-      margin-right: 6px;
-    }
+    position: absolute;
+    right: 0;
+    top: 0;
 
-    &:last-child {
-      filter: grayscale(1);
+    &-btn {
+        &:first-child {
+            margin-right: 6px;
+        }
+
+        &:last-child {
+            filter: grayscale(1);
+        }
     }
-  }
 }
 
 
 
 @media (max-width: 1600px) {
-  .container {
-    width: 90%;
-  }
+    .container {
+        width: 90%;
+    }
 }
 
 @media (max-width: 650px) {
-  .list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 450px) {
-  .title {
-    text-align: center;
-  }
+    .title {
+        text-align: center;
+    }
 
-  .view {
-    position: static;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: end;
-  }
+    .view {
+        position: static;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: end;
+    }
 }
