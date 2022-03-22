@@ -59,9 +59,9 @@
 
         /* checked */
         &-checkbox:checked+&-label::before {
-            content: "x";
-            color: #FF6755;
-            font-weight: bold;
+            content: '+';
+            color:#FF4500;
+            @include adaptiv-font(22, 15);
         }
     }
 
@@ -109,9 +109,9 @@
 
         /* checked */
         &-checkbox:checked+&-label::before {
-            content: "x";
-            color: #FF6755;
-            font-weight: bold;
+            content: '+';
+            @include adaptiv-font(22, 15);
+            color:#FF4500;
         }
     }
 
@@ -183,6 +183,16 @@
             bottom: 0;
             transform: translateY(105%);
             transition: all .3s;
+
+            &:hover {
+                .equipment__item {
+
+                    &-title,
+                    &-text {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
 
         &-text {
@@ -212,7 +222,9 @@
 
             &>.equipment__item-title {
                 color: #fff;
-
+                &:hover{
+                    text-decoration: underline;
+                }
                 &-row {
                     margin-bottom: auto;
                 }

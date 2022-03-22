@@ -125,7 +125,7 @@ textarea:focus:-ms-input-placeholder {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    &-blur>.main>*:not(.modal) {
+    &-blur>.main>*:not(.reviews-modal):not(.modal){
         filter: blur(3px);
     }
     &-blur>.box,
@@ -295,15 +295,14 @@ textarea:focus:-ms-input-placeholder {
 
 .close-button--modal {
     margin-bottom: 15px;
-    justify-content: end;
-    display: flex;
     height: 20%;
+    width: fit-content;
 }
 
 .close-button--modal div {
     cursor: pointer;
     position: relative;
-    height: 68px;
+    height: 65px;
     width: 50px;
 }
 

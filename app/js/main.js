@@ -193,6 +193,8 @@ $(document).ready(function () {
 
 });
 
+const wrapper = document.querySelector('.wrapper');
+
 //Opening sidebar
 $('.header__sidebar-btn').on('click', function () {
     if ($('.sidebar').hasClass('sidebar--hidden')) {
@@ -224,25 +226,34 @@ jQuery(function ($) {
 
 
 //Opening and closing modal window
-const form = document.querySelector('.form');
-$('.map__write-btn').on('click', function () {
-    $('.modal').removeClass('modal__hidden').addClass('modal__visible');
-    if (!form) {
-        $('.wrapper').addClass('wrapper-blur');
-    }
-});
-$(document).mouseup(function (e) { // событие клика по веб-документу
-    var div = $(".modal"); // тут указываем ID элемента
-    if (!div.is(e.target) && div.has(e.target).length === 0) {
+function openModal() {
+    const form = document.querySelector('.form');
+    $('.map__write-btn').on('click', function () {
+        $('.modal').removeClass('modal__hidden').addClass('modal__visible');
+        if (!form) {
+            $('.wrapper').addClass('wrapper-blur');
+        }
+    });
+    
+    $(document).mouseup(function (e) { // событие клика по веб-документу
+        var div = $('.modal'); // тут указываем ID элемента
+        if (!div.is(e.target) // если клик был не по нашему блоку
+            &&
+            div.has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.modal').addClass("modal__hidden");
+            $(".wrapper").removeClass("wrapper-blur");
+        }
+    });
+    
+    $('.close-button--modal').on('click', function () {
         $(".modal").addClass("modal__hidden");
         $('.wrapper').removeClass('wrapper-blur');
-    }
-});
+    });
+}
 
-$('.close-button--modal').on('click', function () {
-    $(".modal").addClass("modal__hidden");
-    $('.wrapper').removeClass('wrapper-blur');
-});
+if (!wrapper.classList.contains('reviews-page')) {
+    openModal();
+}
 
 // const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
 const homePage = 'http://localhost:3000/';
@@ -264,7 +275,7 @@ if (window.location.href == homePage + 'industries.html') {
 if (window.location.href == homePage + 'equipment.html') {
     $('.header__menu-item--equipment').addClass('active-link');
 }
-if (window.location.href == homePage + 'about.html') {
+if (window.location.href == homePage + 'about.html' || window.location.href == homePage + 'team.html' || location.href == homePage + 'reviews.html' || location.href == homePage + 'news.html' || location.href == homePage + 'blog.html') {
     $('.header__menu-item--about').addClass('active-link');
 }
 if (window.location.href == homePage + 'contacts.html') {
@@ -334,7 +345,6 @@ if (window.location.href !== homePage && window.location.href !== homePage + 'te
 }
 
 // Changing title in different installation blocks
-const wrapper = document.querySelector('.wrapper');
 if (wrapper.classList.contains('series')) {
     wrapper.querySelector('.installation__title').innerHTML = '';
 }
@@ -416,19 +426,22 @@ function openReviewsModal() {
     reviewsBtnOpen.addEventListener('click', () => {
         modalReviews.classList.remove('modal__hidden');
         modalReviews.classList.add('modal__visible');
+        document.querySelector('.wrapper').classList.add('wrapper-blur');
     });
 
     reviewsBtnClose.addEventListener('click', () => {
         modalReviews.classList.remove('modal__visible');
         modalReviews.classList.add('modal__hidden');
+        document.querySelector('.wrapper').classList.remove('wrapper-blur');
     });
 
     $(document).mouseup(function (e) { // событие клика по веб-документу
-        var div = $(".reviews-modal"); // тут указываем ID элемента
-        if (!div.is(e.target) // если клик был не по нашему блоку
+        var div2 = $('.reviews-modal'); // тут указываем ID элемента
+        if (!div2.is(e.target) // если клик был не по нашему блоку
             &&
-            div.has(e.target).length === 0) { // и не по его дочерним элементам
-            $(".reviews-modal").addClass("modal__hidden");
+            div2.has(e.target).length === 0) { // и не по его дочерним элементам
+            $(div2).addClass("modal__hidden");
+            $(".wrapper").removeClass("wrapper-blur");
         }
     });
 }
