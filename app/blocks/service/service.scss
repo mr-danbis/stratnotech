@@ -87,7 +87,7 @@
 
         &-list {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template: repeat(1, 80vh) / repeat(3, 1fr);
             @include adaptiv-gridColGap(98, 10);
         }
 
@@ -104,13 +104,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            // height: 75%;
+            height: 75%;
         }
 
         &-img {
             width: 100%;
             object-fit: cover;
-            // height: 25%;
+            height: 25%;
         }
     }
 
@@ -157,7 +157,7 @@
     .service-info {
         &__variants {
             &-list {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template: repeat(2, 50vh) / repeat(2, 1fr);
                 @include adaptiv-gridRowGap(98, 10);
             }
 
@@ -200,7 +200,7 @@
 
         &__variants {
             &-list {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template: repeat(1, auto) / repeat(1, 1fr);
             }
 
             &-item:last-child {
@@ -209,7 +209,9 @@
                 &>img {
                     width: 100%;
                 }
-
+                &>.service-info__variants-content>.service-info__content-list{
+                    margin-bottom: 20px;
+                }
             }
         }
     }

@@ -234,7 +234,7 @@ function openModal() {
             $('.wrapper').addClass('wrapper-blur');
         }
     });
-    
+
     $(document).mouseup(function (e) { // событие клика по веб-документу
         var div = $('.modal'); // тут указываем ID элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
@@ -244,7 +244,7 @@ function openModal() {
             $(".wrapper").removeClass("wrapper-blur");
         }
     });
-    
+
     $('.close-button--modal').on('click', function () {
         $(".modal").addClass("modal__hidden");
         $('.wrapper').removeClass('wrapper-blur');
@@ -256,31 +256,106 @@ if (!wrapper.classList.contains('reviews-page')) {
 }
 
 // const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-const homePage = 'http://localhost:3000/';
+const homePage = 'http://localhost:3001/';
 
 
 // Active page
+const headerLinks = document.querySelectorAll('.header__menu-item');
+const linksDB = {
+    service: [
+        'service.html',
+        'resheniya-dlya-klienta.html',
+        'kompleksnye-proekty.html',
+        'promyshlennaya-avtomatizaciya.html',
+        'modernizaciya-proizvodstva.html',
+        'programmnoe-obespechenie.html',
+        'servisnoe-obsluzhivanie.html'
+    ],
+    technologies: [
+        'technologies.html',
+        'cvd.html',
+        'plasma-chemistry.html',
+        'pvd.html',
+        'etching.html',
+        'surface-preparation.html',
+        'control.html',
+        'heating.html'
+    ],
+    industries: [
+        'industries.html',
+        'optika.html',
+        'mikroelektronika.html',
+        'displejnoe-proizvodstvo.html',
+        'solnechnye-batarei.html',
+        'kosmicheskaya-promyshlennost.html',
+        'mashinostroenie.html',
+        'ekb.html'
+    ],
+    equipment: [
+        'equipment.html',
+        'libra.html',
+        'aota.html',
+        'lyra.html',
+        'vega.html',
+        'taurus.html',
+        'omega.html',
+        'orion.html',
+        'ultra.html',
+        'delta.html',
+        'snt-libra-700.html',
+        'snt-libra-1100.html',
+        'snt-libra-1500.html',
+        'snt-libra-xxx.html',
+        'snt-libra-xox.html',
+    ],
+    about: [
+        'about.html',
+        'team.html',
+        'reviews.html',
+        'news.html',
+        'blog.html'
+    ]
+};
+
+
+
 if (window.location.href == homePage) {
     $('.header__menu-item--home').addClass('active-link');
 }
-if (window.location.href == homePage + 'service.html') {
-    $('.header__menu-item--service').addClass('active-link');
-}
-if (window.location.href == homePage + 'technologies.html') {
-    $('.header__menu-item--technologies').addClass('active-link');
-}
-if (window.location.href == homePage + 'industries.html') {
-    $('.header__menu-item--industries').addClass('active-link');
-}
-if (window.location.href == homePage + 'equipment.html') {
-    $('.header__menu-item--equipment').addClass('active-link');
-}
-if (window.location.href == homePage + 'about.html' || window.location.href == homePage + 'team.html' || location.href == homePage + 'reviews.html' || location.href == homePage + 'news.html' || location.href == homePage + 'blog.html') {
-    $('.header__menu-item--about').addClass('active-link');
-}
+
 if (window.location.href == homePage + 'contacts.html') {
     $('.header__menu-item--contacts').addClass('active-link');
 }
+
+linksDB.service.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--service').addClass('active-link');
+    }
+});
+
+linksDB.technologies.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--technologies').addClass('active-link');
+    }
+});
+
+linksDB.industries.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--industries').addClass('active-link');
+    }
+});
+
+linksDB.equipment.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--equipment').addClass('active-link');
+    }
+});
+
+linksDB.about.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--about').addClass('active-link');
+    }
+});
 
 
 //Catalog view
