@@ -1,5 +1,5 @@
 .reviews-block{
-  @include adaptiv-paddingBottom(180, 60);
+  @include adaptiv-paddingBottom(100, 50);
   &__top{
     display: flex;
     align-items: center;

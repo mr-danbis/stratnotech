@@ -418,7 +418,7 @@
 
 .about-block {
   padding-top: 33px;
-  @include adaptiv-paddingBottom(190, 60);
+  @include adaptiv-paddingBottom(100, 50);
   position: relative;
 
   &__wrapper {
