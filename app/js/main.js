@@ -313,7 +313,19 @@ const linksDB = {
         'team.html',
         'reviews.html',
         'news.html',
-        'blog.html'
+        'blog.html',
+
+        'informacionnye-tekhnologii-v-optike.html',
+        'skolko-nuzhno-solnechnyh-batarej-dlya-chastnogo-doma.html',
+        'novye-unikalnye-tekhnologii-v-oborudovanii.html',
+        'etapy-razrabotki-proekta.html',
+        'innovacionnye-tekhnologii-plazmohimii.html',
+
+        's-novym-godom-i-rozhdestvom.html',
+        'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
+        'proizvodstvo-solnechnyh-batarej.html',
+        "bolee-rentabel'nyj-produkt-dlya-proizvoditelya.html",
+
     ]
 };
 
@@ -558,9 +570,24 @@ const pagesList = [
     'industries.html',
     'equipment.html',
     'about.html',
-    'contacts.html'
+    'contacts.html',
+    'resheniya-dlya-klienta.html',
+    'servisnoe-obsluzhivanie.html',
+    'etching.html',
+    'solnechnye-batarei.html',
+    'libra.html',
+    'team.html',
+    'news.html',
+    'blog.html',
+    'informacionnye-tekhnologii-v-optike.html',
+    'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
+    'snt-libra-700.html'
 ];
 
 for (let i = 0; i < pagesList.length; i++) {
-    new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/${i+1}.png`);
+    if(pagesList[i] === 'snt-libra-700.html'){
+        new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/11.png`);
+    } else {
+        new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/${i+1}.png`);
+    }
 }
