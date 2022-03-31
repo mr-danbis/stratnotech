@@ -255,8 +255,8 @@ if (!wrapper.classList.contains('reviews-page')) {
     openModal();
 }
 
-// const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-const homePage = 'http://localhost:3001/';
+const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+// const homePage = 'http://localhost:3001/';
 
 
 // Active page
@@ -498,6 +498,75 @@ function changingGrid() {
             }
         });
     });
+
+
+
+    if (window.location.href == homePage + linksDB.equipment[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedEquipment');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedEquipment', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedEquipment') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
+    if (window.location.href == homePage + linksDB.technologies[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedTechnologies');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedTechnologies', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedTechnologies') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
+    if (window.location.href == homePage + linksDB.industries[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedIndustries');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedIndustries', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedIndustries') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
 }
 
 if (wrapper.classList.contains('technologies-page') || wrapper.classList.contains('industries-page') || wrapper.classList.contains('equipment-page')) {
@@ -585,7 +654,7 @@ const pagesList = [
 ];
 
 for (let i = 0; i < pagesList.length; i++) {
-    if(pagesList[i] === 'snt-libra-700.html'){
+    if (pagesList[i] === 'snt-libra-700.html') {
         new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/11.png`);
     } else {
         new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/${i+1}.png`);

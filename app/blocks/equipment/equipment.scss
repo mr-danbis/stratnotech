@@ -146,12 +146,16 @@
         justify-content: space-between;
         position: relative;
         overflow: hidden;
-
+        color: black;
         &:hover {
-            cursor: pointer;
-
-            .equipment__item-bottom {
-                transform: translateY(0);
+            .equipment__item{
+                &-bottom {
+                    transform: translateY(0);
+                }
+                &-title,
+                &-text {
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -183,16 +187,6 @@
             bottom: 0;
             transform: translateY(105%);
             transition: all .3s;
-
-            &:hover {
-                .equipment__item {
-
-                    &-title,
-                    &-text {
-                        text-decoration: underline;
-                    }
-                }
-            }
         }
 
         &-text {

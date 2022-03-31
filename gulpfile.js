@@ -14,7 +14,7 @@ function html(){
   return src('app/pages/*.html')
       .pipe(fileinclude())
       .pipe(dest('app'))
-      .pipe(browserSync.stream())
+      .pipe(browserSync.stream());
 }
 
 function styles() {
@@ -26,7 +26,7 @@ function styles() {
         grid: true
       }))
       .pipe(dest('app/css'))
-      .pipe(browserSync.stream())
+      .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -37,7 +37,7 @@ function scripts() {
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
 
 function images() {
@@ -55,7 +55,7 @@ function images() {
     //     })
     //   ]
     // ))
-    .pipe(dest('dist/images'))
+    .pipe(dest('dist/images'));
 }
 
 
@@ -81,17 +81,18 @@ function build() {
     'app/js/main.min.js',
     'app/js/owl.carousel.min.js',
     'app/videos/*',
+    'app/favicon.ico',
     'app/fonts/**/*',
   ], {base: 'app'})
-    .pipe(dest('dist'))
+    .pipe(dest('dist'));
 }
 
 function cleanDist() {
-  return del('dist')
+  return del('dist');
 }
 
 function cleanPages() {
-  return del('app/*.html')
+  return del('app/*.html');
 }
 
 
@@ -102,7 +103,7 @@ exports.scripts      = scripts;
 exports.images       = images;
 exports.cleanDist    = cleanDist;
 exports.cleanPages   = cleanPages;
-exports.html         = html
+exports.html         = html;
 
 exports.build   = series(cleanDist, images, build);
 exports.default = parallel(cleanPages, html, styles, scripts, browsersync, watching);
