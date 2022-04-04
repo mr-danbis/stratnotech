@@ -200,6 +200,82 @@
                 font-weight: normal;
                 @include adaptiv-font(16, 10);
             }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover &-info {
+                box-shadow: 0px 10px 20px rgba(142, 140, 140, 0.25);
+            }
+
+            &:hover &-description {
+                opacity: 1;
+            }
+
+            &-image {
+                position: relative;
+            }
+
+            &-info {
+                transition: all .3s;
+                @include adaptiv-padding(20, 10);
+            }
+
+            &-name {
+                font-style: normal;
+                font-weight: normal;
+                @include adaptiv-font(18, 11);
+                margin-bottom: 5px;
+            }
+
+            &-position {
+                font-style: normal;
+                font-weight: normal;
+                @include adaptiv-font(16, 10);
+            }
+
+            &-description {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(#000, 0.5);
+                display: flex;
+                flex-direction: column;
+                opacity: 0;
+                transition: all .3s;
+                @include adaptiv-paddingTop(220, 5);
+                padding-left: 10px;
+                padding-right: 10px;
+
+                &_text,
+                &_mail,
+                &_tel {
+                    color: #fff;
+                    @include adaptiv-font(18, 7);
+                }
+
+                &_text {
+                    margin-bottom: 29px;
+                }
+
+                &_mail {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                &_mail,
+                &_tel {
+                    border-bottom: 1px solid transparent;
+                    width: fit-content;
+
+                    &:hover {
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+            }
         }
 
         &__team {

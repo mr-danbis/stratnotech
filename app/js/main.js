@@ -324,7 +324,7 @@ const linksDB = {
         's-novym-godom-i-rozhdestvom.html',
         'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
         'proizvodstvo-solnechnyh-batarej.html',
-        "bolee-rentabel'nyj-produkt-dlya-proizvoditelya.html",
+        "bolee-rentabelnyj-produkt-dlya-proizvoditelya.html",
 
     ]
 };
@@ -653,6 +653,25 @@ const pagesList = [
     'snt-libra-700.html'
 ];
 
+const equipment = [
+    'iota.html',
+    'lyra.html',
+    'vega.html',
+    'taurus.html',
+    'omega.html',
+    'orion.html',
+    'ultra.html',
+    'delta.html',
+    'opticExpress.html',
+    'magma.html'
+];
+
+const news = [
+    's-novym-godom-i-rozhdestvom.html',
+    'proizvodstvo-solnechnyh-batarej.html',
+    'bolee-rentabelnyj-produkt-dlya-proizvoditelya.html'
+];
+
 for (let i = 0; i < pagesList.length; i++) {
     if (pagesList[i] === 'snt-libra-700.html') {
         new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/11.png`);
@@ -660,3 +679,14 @@ for (let i = 0; i < pagesList.length; i++) {
         new pageBg().changingPageImage(pagesList[i], `/images/pages-bg/${i+1}.png`);
     }
 }
+
+equipment.forEach(series => {
+    new pageBg().changingPageImage(series, `/images/pages-bg/11.png`);
+});
+
+news.forEach(series => {
+    new pageBg().changingPageImage(series, `/images/pages-bg/16.png`);
+});
+
+Fancybox.bind("[data-fancybox]", {
+});

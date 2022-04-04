@@ -13,6 +13,13 @@
     @include adaptiv-gridRowGap(70, 40);
   }
   &__item{
+      color: inherit;
+      &:hover{
+          .industries__item-title,
+          .industries__item-text {
+              text-decoration: underline;
+          }
+      }
     &-icon{
       margin-bottom: 19px;
     }
