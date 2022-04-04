@@ -255,8 +255,8 @@ if (!wrapper.classList.contains('reviews-page')) {
     openModal();
 }
 
-const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-// const homePage = 'http://localhost:3001/';
+// const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+const homePage = 'http://localhost:3001/';
 
 
 // Active page
@@ -294,7 +294,7 @@ const linksDB = {
     equipment: [
         'equipment.html',
         'libra.html',
-        'aota.html',
+        'iota.html',
         'lyra.html',
         'vega.html',
         'taurus.html',
