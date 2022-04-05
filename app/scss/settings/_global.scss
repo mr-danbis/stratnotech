@@ -114,10 +114,21 @@ textarea:focus:-ms-input-placeholder {
     }
 
     &-pages {
+        position: relative;
         background-color: #000;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .3);
+            z-index: 2;
+        }
     }
 }
 
@@ -155,6 +166,8 @@ textarea:focus:-ms-input-placeholder {
 .container {
     width: 71%;
     margin: 0 auto;
+    position: relative;
+    z-index: 3;
 }
 
 #more {

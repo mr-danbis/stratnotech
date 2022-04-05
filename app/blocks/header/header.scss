@@ -1,6 +1,8 @@
 .header {
   color: #fff;
   margin-top: 28px;
+  position: relative;
+  z-index: 4;
   &__container {
     width: 84%;
     margin: auto;

@@ -650,7 +650,11 @@ const pagesList = [
     'blog.html',
     'informacionnye-tekhnologii-v-optike.html',
     'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
-    'snt-libra-700.html'
+    'snt-libra-700.html',
+    'kompleksnye-proekty.html',
+    'promyshlennaya-avtomatizaciya.html',
+    'modernizaciya-proizvodstva.html',
+    'programmnoe-obespechenie.html',
 ];
 
 const equipment = [
@@ -688,5 +692,4 @@ news.forEach(series => {
     new pageBg().changingPageImage(series, `/images/pages-bg/16.png`);
 });
 
-Fancybox.bind("[data-fancybox]", {
-});
+Fancybox.bind("[data-fancybox]");
