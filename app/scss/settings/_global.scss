@@ -1,6 +1,5 @@
 html,
 body {
-    overflow-x: hidden;
     height: 100%;
     color: $textColor;
     font-family: 'Open Sans', sans-serif;
@@ -133,6 +132,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .wrapper {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100%;
