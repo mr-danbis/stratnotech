@@ -1,11 +1,10 @@
 const { src, dest, watch, parallel, series }  = require('gulp');
 
-const scss          = require('gulp-sass');
+const scss          = require('gulp-sass')(require('sass'));
 const concat        = require('gulp-concat');
 const browserSync   = require('browser-sync').create();
 const uglify        = require('gulp-uglify-es').default;
 const autoprefixer  = require('gulp-autoprefixer');
-const imagemin      = require('gulp-imagemin');
 const del           = require('del');
 const fileinclude   = require('gulp-file-include');
 
@@ -42,19 +41,6 @@ function scripts() {
 
 function images() {
   return src('app/images/**/*')
-    // .pipe(imagemin(
-    //   [
-    //     imagemin.gifsicle({ interlaced: true }),
-    //     imagemin.mozjpeg({ quality: 75, progressive: true }),
-    //     imagemin.optipng({ optimizationLevel: 5 }),
-    //     imagemin.svgo({
-    //       plugins: [
-    //         { removeViewBox: true },
-    //         { cleanupIDs: false }
-    //       ]
-    //     })
-    //   ]
-    // ))
     .pipe(dest('dist/images'));
 }
 
@@ -79,10 +65,8 @@ function build() {
     'app/*.html',
     'app/css/style.min.css',
     'app/js/main.min.js',
-    'app/js/owl.carousel.min.js',
-    'app/videos/*',
-    'app/favicon.ico',
     'app/fonts/**/*',
+    'app/favicon.ico'
   ], {base: 'app'})
     .pipe(dest('dist'));
 }
@@ -104,6 +88,7 @@ exports.images       = images;
 exports.cleanDist    = cleanDist;
 exports.cleanPages   = cleanPages;
 exports.html         = html;
+
 
 exports.build   = series(cleanDist, images, build);
 exports.default = parallel(cleanPages, html, styles, scripts, browsersync, watching);

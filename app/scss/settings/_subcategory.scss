@@ -29,6 +29,9 @@
       @include adaptiv-width(100,40);
       @include adaptiv-height(100, 40);
     }
+    &-main{
+        object-fit: cover;
+    }
   }
   &__link{
     position: relative;

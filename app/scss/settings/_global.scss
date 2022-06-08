@@ -118,6 +118,7 @@ textarea:focus:-ms-input-placeholder {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        z-index: 10;
         &::after{
             position: absolute;
             content: '';

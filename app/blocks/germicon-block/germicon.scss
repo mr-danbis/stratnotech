@@ -1,0 +1,172 @@
+.germicon {
+    @include adaptiv-marginBottom(88,40);
+}
+
+.germicon__title {
+    @include adaptiv-marginBottom(50,20);
+}
+
+.germicon__info-text {
+    @include adaptiv-marginBottom(88,40);
+}
+
+.germicon__advantages {
+    @include adaptiv-marginBottom(117,45);
+}
+.germicon__advantages-list {
+    display: flex;
+    justify-content: space-between;
+}
+.germicon__advantages-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.germicon__advantages-img {
+    width: 40%;
+    margin-bottom: 22px;
+}
+.germicon__advantages-title {
+    text-align: center;
+    width: 70%;
+}
+.germicon__ecosystem {
+    @include adaptiv-marginBottom(100,40);
+}
+.germicon__ecosystem-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.germicon__ecosystem-img {
+    width: 45%;
+}
+.germicon__ecosystem-text {
+    width: 45%;
+}
+.germicon__consumers {
+    @include adaptiv-marginBottom(100,40);
+}
+.germicon__consumers-text {
+    margin-bottom: 64px;
+    @include adaptiv-marginBottom(65,30);
+
+
+}
+.germicon__consumers-block {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.germicon__consumers-block_text {
+    width: 60%;
+}
+.germicon__consumers-block_text--big{
+    width: 70%;
+}
+.germicon__consumers-block_list {
+    @include adaptiv-marginLeft(25,10);
+}
+.germicon__consumers-block_item {
+    position: relative;
+    @include adaptiv-paddingLeft(25,13);
+}
+.germicon__consumers-block_item:not(:last-child){
+    margin-bottom: 7px;
+}
+.germicon__consumers-block_item::before{
+    position: absolute;
+    content: '\2022';
+    left: 0;
+}
+.germicon__consumers-img {
+    width: 35%;
+}
+.germicon__consumers-img--small{
+    width: 20%;
+}
+.germicon__partners-text {
+    @include adaptiv-marginBottom(50,20);
+}
+.germicon__partners-group {
+    display: flex;
+    justify-content: space-between;
+}
+.germicon__partners-column {
+    width: 30%;
+}
+.germicon__partners-column_title {
+    @include adaptiv-marginBottom(50,20);
+}
+.germicon__partners-list {
+    @include adaptiv-marginLeft(25,10);
+}
+.germicon__partners-item {
+    margin-bottom: 10px;
+    position: relative;
+    @include adaptiv-paddingLeft(25,13);
+}
+.germicon__partners-item::before{
+    position: absolute;
+    content: '\2022';
+    left: 0;
+}
+
+@media (max-width: 800px) {
+    .germicon__advantages-img {
+        width: 30%;
+    }
+    .germicon__advantages-title {
+        width: 85%;
+    }
+
+    .germicon__ecosystem-info{
+        flex-direction: column;
+    }
+    .germicon__ecosystem-img {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .germicon__ecosystem-text {
+        width: 100%;
+    }
+    
+    .germicon__consumers-block{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .germicon__consumers-block_text{
+        width: 100%;
+        @include adaptiv-marginBottom(50,20);
+    }
+    .germicon__consumers-img{
+        @include adaptiv-marginBottom(50,20);
+    }
+
+
+    .germicon__partners-group{
+        flex-wrap: wrap;
+    }
+    .germicon__partners-column{
+        width: 48%;
+    }
+    .germicon__partners-column:last-child{
+        width: 100%;
+        @include adaptiv-marginTop(50,20);
+    }
+}
+
+
+@media (max-width: 500px) {
+    .germicon__partners-column{
+        width: 100%;
+    }
+    .germicon__partners-column:not(:last-child){
+        @include adaptiv-marginBottom(50,20);
+    }
+    .germicon__partners-column:last-child{
+        width: 100%;
+        margin-top: 0;
+    }
+}

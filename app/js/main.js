@@ -1,12 +1,133 @@
 //Initializing the slider
 $.noConflict();
-$(document).ready(function () {
+const wrapper = document.querySelector('.wrapper');
+const headerLinks = document.querySelectorAll('.header__menu-item');
+
+// const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
+const homePage = 'http://localhost:3001/';
+
+Fancybox.bind("[data-fancybox]");
+
+// Active page
+const linksDB = {
+    service: [
+        'service.html',
+        'resheniya-dlya-klienta.html',
+        'kompleksnye-proekty.html',
+        'promyshlennaya-avtomatizaciya.html',
+        'modernizaciya-proizvodstva.html',
+        'programmnoe-obespechenie.html',
+        'servisnoe-obsluzhivanie.html'
+    ],
+    technologies: [
+        'technologies.html',
+        'cvd.html',
+        'plasma-chemistry.html',
+        'pvd.html',
+        'etching.html',
+        'surface-preparation.html',
+        'control.html',
+        'heating.html'
+    ],
+    industries: [
+        'industries.html',
+        'optika.html',
+        'mikroelektronika.html',
+        'displejnoe-proizvodstvo.html',
+        'solnechnye-batarei.html',
+        'kosmicheskaya-promyshlennost.html',
+        'mashinostroenie.html',
+        'ekb.html',
+        'germicon.html'
+    ],
+    equipment: [
+        'equipment.html',
+        'libra.html',
+        'iota.html',
+        'lyra.html',
+        'vega.html',
+        'taurus.html',
+        'omega.html',
+        'orion.html',
+        'ultra.html',
+        'delta.html',
+        'snt-libra-700.html',
+        'snt-libra-1100.html',
+        'snt-libra-1500.html',
+        'snt-libra-xxx.html',
+        'snt-libra-xox.html',
+    ],
+    about: [
+        'about.html',
+        'team.html',
+        'reviews.html',
+        'news.html',
+        'blog.html',
+
+        'informacionnye-tekhnologii-v-optike.html',
+        'skolko-nuzhno-solnechnyh-batarej-dlya-chastnogo-doma.html',
+        'novye-unikalnye-tekhnologii-v-oborudovanii.html',
+        'etapy-razrabotki-proekta.html',
+        'innovacionnye-tekhnologii-plazmohimii.html',
+
+        's-novym-godom-i-rozhdestvom.html',
+        'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
+        'proizvodstvo-solnechnyh-batarej.html',
+        "bolee-rentabelnyj-produkt-dlya-proizvoditelya.html",
+
+    ]
+};
+
+if (window.location.href == homePage) {
+    $('.header__menu-item--home').addClass('active-link');
+}
+
+if (window.location.href == homePage + 'contacts.html') {
+    $('.header__menu-item--contacts').addClass('active-link');
+}
+
+linksDB.service.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--service').addClass('active-link');
+    }
+});
+
+linksDB.technologies.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--technologies').addClass('active-link');
+    }
+});
+
+linksDB.industries.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--industries').addClass('active-link');
+    }
+});
+
+linksDB.equipment.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--equipment').addClass('active-link');
+    }
+});
+
+linksDB.about.forEach(item => {
+    if (window.location.href == homePage + item) {
+        $('.header__menu-item--about').addClass('active-link');
+    }
+});
+
+
+
+
+function initializeSliders() {
+
     $(".slider").owlCarousel({
         items: 1,
         margin: 1000,
         URLhashListener: true,
         startPosition: 'URLHash',
     });
+
 
     $(".slider").on("changed.owl.carousel", function (event) {
         var page = event.page.index;
@@ -16,6 +137,7 @@ $(document).ready(function () {
             .eq(page)
             .addClass("active");
     });
+
 
     $(".partners__slider").owlCarousel({
         responsiveClass: true,
@@ -191,42 +313,91 @@ $(document).ready(function () {
     }
 
 
-});
 
-const wrapper = document.querySelector('.wrapper');
-
-//Opening sidebar
-$('.header__sidebar-btn').on('click', function () {
-    if ($('.sidebar').hasClass('sidebar--hidden')) {
-        $('.sidebar').removeClass('sidebar--hidden');
-    }
-});
-
-//Closing sidebar
-$('.close-button').on('click', function () {
-    if ($('.sidebar').hasClass('sidebar--hidden')) {
-        $('.sidebar').removeClass('sidebar--hidden');
-    } else {
-        $('.sidebar').addClass('sidebar--hidden');
-    }
-});
-
-
-//Closing sidebar beyond its borders
-jQuery(function ($) {
-    $(document).mouseup(function (e) { // событие клика по веб-документу
-        var div = $(".sidebar"); // тут указываем ID элемента
-        if (!div.is(e.target) // если клик был не по нашему блоку
-            &&
-            div.has(e.target).length === 0) { // и не по его дочерним элементам
-            $(".sidebar").addClass("sidebar--hidden");
+    $(".germicon__advantages-list").owlCarousel({
+        responsiveClass: true,
+        dots: false,
+        items: 1,
+        responsive: {
+            500: {
+                items: 2,
+            },
+            800: {
+                items: 4,
+            }
         }
     });
-});
+
+    window.addEventListener('resize', function () {
+
+        if (screen.width < 800 && !wrapper.classList.contains('industries-page')) {
+            $(".industries__list").owlCarousel({
+                responsiveClass: true,
+                dots: false,
+                items: 1,
+                responsive: {
+                    500: {
+                        items: 2,
+                    },
+                }
+            });
+        } else {
+            $(".industries__list").trigger('destroy.owl.carousel');
+        }
 
 
-//Opening and closing modal window
-function openModal() {
+
+    });
+
+}
+initializeSliders();
+
+
+
+
+
+
+
+function openingAndClosingSidebar() {
+    //Opening sidebar
+    $('.header__sidebar-btn').on('click', function () {
+        if ($('.sidebar').hasClass('sidebar--hidden')) {
+            $('.sidebar').removeClass('sidebar--hidden');
+        }
+    });
+
+    //Closing sidebar
+    $('.close-button').on('click', function () {
+        if ($('.sidebar').hasClass('sidebar--hidden')) {
+            $('.sidebar').removeClass('sidebar--hidden');
+        } else {
+            $('.sidebar').addClass('sidebar--hidden');
+        }
+    });
+
+    //Closing sidebar beyond its borders
+    jQuery(function ($) {
+        $(document).mouseup(function (e) { // событие клика по веб-документу
+            var div = $(".sidebar"); // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                &&
+                div.has(e.target).length === 0) { // и не по его дочерним элементам
+                $(".sidebar").addClass("sidebar--hidden");
+            }
+        });
+    });
+}
+openingAndClosingSidebar();
+
+
+
+
+
+
+
+
+function openingAndClosingModalWindow() {
+    //Opening and closing modal window
     const form = document.querySelector('.form');
     $('.map__write-btn').on('click', function () {
         $('.modal').removeClass('modal__hidden').addClass('modal__visible');
@@ -250,124 +421,177 @@ function openModal() {
         $('.wrapper').removeClass('wrapper-blur');
     });
 }
-
 if (!wrapper.classList.contains('reviews-page')) {
-    openModal();
+    openingAndClosingModalWindow();
 }
 
-const homePage = 'https://stratnanotech-static.devitgso.iron.hostflyby.net/';
-// const homePage = 'http://localhost:3001/';
-
-
-// Active page
-const headerLinks = document.querySelectorAll('.header__menu-item');
-const linksDB = {
-    service: [
-        'service.html',
-        'resheniya-dlya-klienta.html',
-        'kompleksnye-proekty.html',
-        'promyshlennaya-avtomatizaciya.html',
-        'modernizaciya-proizvodstva.html',
-        'programmnoe-obespechenie.html',
-        'servisnoe-obsluzhivanie.html'
-    ],
-    technologies: [
-        'technologies.html',
-        'cvd.html',
-        'plasma-chemistry.html',
-        'pvd.html',
-        'etching.html',
-        'surface-preparation.html',
-        'control.html',
-        'heating.html'
-    ],
-    industries: [
-        'industries.html',
-        'optika.html',
-        'mikroelektronika.html',
-        'displejnoe-proizvodstvo.html',
-        'solnechnye-batarei.html',
-        'kosmicheskaya-promyshlennost.html',
-        'mashinostroenie.html',
-        'ekb.html'
-    ],
-    equipment: [
-        'equipment.html',
-        'libra.html',
-        'iota.html',
-        'lyra.html',
-        'vega.html',
-        'taurus.html',
-        'omega.html',
-        'orion.html',
-        'ultra.html',
-        'delta.html',
-        'snt-libra-700.html',
-        'snt-libra-1100.html',
-        'snt-libra-1500.html',
-        'snt-libra-xxx.html',
-        'snt-libra-xox.html',
-    ],
-    about: [
-        'about.html',
-        'team.html',
-        'reviews.html',
-        'news.html',
-        'blog.html',
-
-        'informacionnye-tekhnologii-v-optike.html',
-        'skolko-nuzhno-solnechnyh-batarej-dlya-chastnogo-doma.html',
-        'novye-unikalnye-tekhnologii-v-oborudovanii.html',
-        'etapy-razrabotki-proekta.html',
-        'innovacionnye-tekhnologii-plazmohimii.html',
-
-        's-novym-godom-i-rozhdestvom.html',
-        'innovacionnye-proizvodstvennye-sistemy-tonkoplenochnogo-oborudovaniya.html',
-        'proizvodstvo-solnechnyh-batarej.html',
-        "bolee-rentabelnyj-produkt-dlya-proizvoditelya.html",
-
-    ]
-};
 
 
 
-if (window.location.href == homePage) {
-    $('.header__menu-item--home').addClass('active-link');
+
+
+
+function changingGrid() {
+    const viewWrapper = document.querySelector('.view');
+    const viewBtn = viewWrapper.querySelectorAll('.view-btn');
+    const listWrapper = document.querySelector('.list');
+
+    viewBtn.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            if (i == 0) {
+                listWrapper.classList.remove('list-row');
+                viewBtn[i].style.filter = 'grayscale(0)';
+                viewBtn[i + 1].style.filter = 'grayscale(1)';
+            }
+            if (i == 1) {
+                listWrapper.classList.add('list-row');
+                viewBtn[i].style.filter = 'grayscale(0)';
+                viewBtn[i - 1].style.filter = 'grayscale(1)';
+            }
+        });
+    });
+
+
+
+    if (window.location.href == homePage + linksDB.equipment[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedEquipment');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedEquipment', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedEquipment') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
+    if (window.location.href == homePage + linksDB.technologies[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedTechnologies');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedTechnologies', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedTechnologies') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
+    if (window.location.href == homePage + linksDB.industries[0]) {
+        viewBtn.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                if (i == 0) {
+                    localStorage.removeItem('isChangedIndustries');
+                }
+                if (i == 1) {
+                    localStorage.setItem('isChangedIndustries', 'true');
+                }
+            });
+        });
+        if (localStorage.getItem('isChangedIndustries') === 'true') {
+            listWrapper.classList.add('list-row');
+            viewBtn[1].style.filter = 'grayscale(0)';
+            viewBtn[0].style.filter = 'grayscale(1)';
+        } else {
+            listWrapper.classList.remove('list-row');
+            viewBtn[0].style.filter = 'grayscale(0)';
+            viewBtn[1].style.filter = 'grayscale(1)';
+        }
+    }
+
+}
+if (wrapper.classList.contains('technologies-page') || wrapper.classList.contains('industries-page') || wrapper.classList.contains('equipment-page')) {
+    changingGrid();
 }
 
-if (window.location.href == homePage + 'contacts.html') {
-    $('.header__menu-item--contacts').addClass('active-link');
+
+
+
+
+
+
+
+
+
+function openReviewsModal() {
+    const reviewsBtnOpen = document.querySelector('.reviews-list__btn');
+    const modalReviews = document.querySelector('.reviews-modal');
+    const reviewsBtnClose = document.querySelector('.reviews-modal__close-btn');
+    reviewsBtnOpen.addEventListener('click', () => {
+        modalReviews.classList.remove('modal__hidden');
+        modalReviews.classList.add('modal__visible');
+        document.querySelector('.wrapper').classList.add('wrapper-blur');
+    });
+
+    reviewsBtnClose.addEventListener('click', () => {
+        modalReviews.classList.remove('modal__visible');
+        modalReviews.classList.add('modal__hidden');
+        document.querySelector('.wrapper').classList.remove('wrapper-blur');
+    });
+
+    $(document).mouseup(function (e) { // событие клика по веб-документу
+        var div2 = $('.reviews-modal'); // тут указываем ID элемента
+        if (!div2.is(e.target) // если клик был не по нашему блоку
+            &&
+            div2.has(e.target).length === 0) { // и не по его дочерним элементам
+            $(div2).addClass("modal__hidden");
+            $(".wrapper").removeClass("wrapper-blur");
+        }
+    });
+}
+if (wrapper.classList.contains('reviews-page')) {
+    openReviewsModal();
 }
 
-linksDB.service.forEach(item => {
-    if (window.location.href == homePage + item) {
-        $('.header__menu-item--service').addClass('active-link');
-    }
-});
 
-linksDB.technologies.forEach(item => {
-    if (window.location.href == homePage + item) {
-        $('.header__menu-item--technologies').addClass('active-link');
-    }
-});
 
-linksDB.industries.forEach(item => {
-    if (window.location.href == homePage + item) {
-        $('.header__menu-item--industries').addClass('active-link');
-    }
-});
 
-linksDB.equipment.forEach(item => {
-    if (window.location.href == homePage + item) {
-        $('.header__menu-item--equipment').addClass('active-link');
-    }
-});
 
-linksDB.about.forEach(item => {
-    if (window.location.href == homePage + item) {
-        $('.header__menu-item--about').addClass('active-link');
+
+
+
+
+
+
+function isModalVisible() {
+    const modal = document.querySelector('.modal');
+    const mapWriteBtn = document.querySelector('.map__write-btn');
+    const map = document.querySelector('.map');
+    if (getComputedStyle(modal).display == 'block' && map) {
+        mapWriteBtn.setAttribute('href', '#contact');
+        mapWriteBtn.addEventListener('click', () => {
+
+        });
     }
-});
+}
+isModalVisible();
+
+
+
+
+
+
+
 
 
 //Catalog view
@@ -479,145 +703,7 @@ varietiesTextBtn.forEach((btn, i) => {
 
 
 
-function changingGrid() {
-    const viewWrapper = document.querySelector('.view');
-    const viewBtn = viewWrapper.querySelectorAll('.view-btn');
-    const listWrapper = document.querySelector('.list');
 
-    viewBtn.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-            if (i == 0) {
-                listWrapper.classList.remove('list-row');
-                viewBtn[i].style.filter = 'grayscale(0)';
-                viewBtn[i + 1].style.filter = 'grayscale(1)';
-            }
-            if (i == 1) {
-                listWrapper.classList.add('list-row');
-                viewBtn[i].style.filter = 'grayscale(0)';
-                viewBtn[i - 1].style.filter = 'grayscale(1)';
-            }
-        });
-    });
-
-
-
-    if (window.location.href == homePage + linksDB.equipment[0]) {
-        viewBtn.forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                if (i == 0) {
-                    localStorage.removeItem('isChangedEquipment');
-                }
-                if (i == 1) {
-                    localStorage.setItem('isChangedEquipment', 'true');
-                }
-            });
-        });
-        if (localStorage.getItem('isChangedEquipment') === 'true') {
-            listWrapper.classList.add('list-row');
-            viewBtn[1].style.filter = 'grayscale(0)';
-            viewBtn[0].style.filter = 'grayscale(1)';
-        } else {
-            listWrapper.classList.remove('list-row');
-            viewBtn[0].style.filter = 'grayscale(0)';
-            viewBtn[1].style.filter = 'grayscale(1)';
-        }
-    }
-
-    if (window.location.href == homePage + linksDB.technologies[0]) {
-        viewBtn.forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                if (i == 0) {
-                    localStorage.removeItem('isChangedTechnologies');
-                }
-                if (i == 1) {
-                    localStorage.setItem('isChangedTechnologies', 'true');
-                }
-            });
-        });
-        if (localStorage.getItem('isChangedTechnologies') === 'true') {
-            listWrapper.classList.add('list-row');
-            viewBtn[1].style.filter = 'grayscale(0)';
-            viewBtn[0].style.filter = 'grayscale(1)';
-        } else {
-            listWrapper.classList.remove('list-row');
-            viewBtn[0].style.filter = 'grayscale(0)';
-            viewBtn[1].style.filter = 'grayscale(1)';
-        }
-    }
-
-    if (window.location.href == homePage + linksDB.industries[0]) {
-        viewBtn.forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                if (i == 0) {
-                    localStorage.removeItem('isChangedIndustries');
-                }
-                if (i == 1) {
-                    localStorage.setItem('isChangedIndustries', 'true');
-                }
-            });
-        });
-        if (localStorage.getItem('isChangedIndustries') === 'true') {
-            listWrapper.classList.add('list-row');
-            viewBtn[1].style.filter = 'grayscale(0)';
-            viewBtn[0].style.filter = 'grayscale(1)';
-        } else {
-            listWrapper.classList.remove('list-row');
-            viewBtn[0].style.filter = 'grayscale(0)';
-            viewBtn[1].style.filter = 'grayscale(1)';
-        }
-    }
-
-}
-
-if (wrapper.classList.contains('technologies-page') || wrapper.classList.contains('industries-page') || wrapper.classList.contains('equipment-page')) {
-    changingGrid();
-}
-
-
-
-function openReviewsModal() {
-    const reviewsBtnOpen = document.querySelector('.reviews-list__btn');
-    const modalReviews = document.querySelector('.reviews-modal');
-    const reviewsBtnClose = document.querySelector('.reviews-modal__close-btn');
-    reviewsBtnOpen.addEventListener('click', () => {
-        modalReviews.classList.remove('modal__hidden');
-        modalReviews.classList.add('modal__visible');
-        document.querySelector('.wrapper').classList.add('wrapper-blur');
-    });
-
-    reviewsBtnClose.addEventListener('click', () => {
-        modalReviews.classList.remove('modal__visible');
-        modalReviews.classList.add('modal__hidden');
-        document.querySelector('.wrapper').classList.remove('wrapper-blur');
-    });
-
-    $(document).mouseup(function (e) { // событие клика по веб-документу
-        var div2 = $('.reviews-modal'); // тут указываем ID элемента
-        if (!div2.is(e.target) // если клик был не по нашему блоку
-            &&
-            div2.has(e.target).length === 0) { // и не по его дочерним элементам
-            $(div2).addClass("modal__hidden");
-            $(".wrapper").removeClass("wrapper-blur");
-        }
-    });
-}
-
-if (wrapper.classList.contains('reviews-page')) {
-    openReviewsModal();
-}
-
-function isModalVisible() {
-    const modal = document.querySelector('.modal');
-    const mapWriteBtn = document.querySelector('.map__write-btn');
-    const map = document.querySelector('.map');
-    if (getComputedStyle(modal).display == 'block' && map) {
-        mapWriteBtn.setAttribute('href', '#contact');
-        mapWriteBtn.addEventListener('click', () => {
-
-        });
-    }
-}
-isModalVisible();
 
 
 class pageBg {
@@ -691,5 +777,3 @@ equipment.forEach(series => {
 news.forEach(series => {
     new pageBg().changingPageImage(series, `/images/pages-bg/16.png`);
 });
-
-Fancybox.bind("[data-fancybox]");

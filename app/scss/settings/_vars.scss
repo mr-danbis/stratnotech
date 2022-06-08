@@ -86,3 +86,9 @@ $orange: #FF4500;
   $differenceWidth: $maxWidth - $minWidth;
   margin-right: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth})) !important;
 }
+
+@mixin adaptiv-marginLeft($pcValue, $mobValue) {
+  $addSize: $pcValue - $mobValue;
+  $differenceWidth: $maxWidth - $minWidth;
+  margin-left: calc(#{$mobValue + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$differenceWidth})) !important;
+}
